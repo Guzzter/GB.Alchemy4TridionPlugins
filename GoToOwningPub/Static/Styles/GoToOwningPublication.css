@@ -1,0 +1,10 @@
+﻿/* 
+ * context menu item icons for the context menu that appears for translatable icons 
+ */
+
+.contextmenu #cm_GoToOwningPublication > .image
+{
+	background-image:url('${ImgUrl}GoToOwningPublication.png');
+    height: 16px;
+    width: 16px;
+}
