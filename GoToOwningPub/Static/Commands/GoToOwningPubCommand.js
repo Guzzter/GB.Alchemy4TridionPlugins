@@ -14,13 +14,14 @@ Alchemy.command("Go_To_Owning_Publication", "GoToOwningPub", {
 		if (selection.getItems().length == 1) {
 			var itemType = $models.getItemType(selection.getItem(0));
 			if (itemType == $const.ItemType.COMPONENT ||
-			itemType == $const.ItemType.COMPONENT_TEMPLATE ||
-			itemType == $const.ItemType.SCHEMA ||
-			itemType == $const.ItemType.TEMPLATE_BUILDING_BLOCK ||
-			itemType == $const.ItemType.FOLDER ||
-			itemType == $const.ItemType.STRUCTURE_GROUP ||
-			itemType == $const.ItemType.PAGE ||
-			itemType == $const.ItemType.PAGE_TEMPLATE) {
+			    itemType == $const.ItemType.COMPONENT_TEMPLATE ||
+			    itemType == $const.ItemType.SCHEMA ||
+			    itemType == $const.ItemType.TEMPLATE_BUILDING_BLOCK ||
+			    itemType == $const.ItemType.FOLDER ||
+			    itemType == $const.ItemType.STRUCTURE_GROUP ||
+			    itemType == $const.ItemType.PAGE ||
+			    itemType == $const.ItemType.PAGE_TEMPLATE)
+			{
 				return true;
 			}
 		}
