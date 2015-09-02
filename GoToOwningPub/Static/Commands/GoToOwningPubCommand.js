@@ -45,20 +45,21 @@ Alchemy.command("Go_To_Owning_Publication", "GoToOwningPub", {
 		self = this;
 
 		this.loadItem(it, function () {
-			self.goToParent(it.getXmlDocument());
+			self.goToParent(it);
 		});
 	},
 
 	/**
 	* Checks if current publication is the owner of the selected item. If not it navigates to the correct OrganizationItem. If it is the owner, the user is notified.
 	*/
-	goToParent: function (doc) {
-		var pubId = $xml.selectNodes(doc, "//tcm:Publication/@xlink:href")[0].value,
+	goToParent: function (item) {
+	    var doc = item.getXmlDocument(),
+		pubId = $xml.selectNodes(doc, "//tcm:Publication/@xlink:href")[0].value,
 		owningPubId = $xml.selectNodes(doc, "//tcm:OwningPublication/@xlink:href")[0].value;
 
 		if (owningPubId != pubId) {
 			//var it = $xml.selectNodes(doc, "//tcm:OrganizationalItem/@xlink:href")[0].value;
-			var it = $xml.selectNodes(doc, "//tcm:Page/@ID")[0].value;
+		    var it = item.getId();
 
 			var owningPubNr = owningPubId.slice(6, owningPubId.lastIndexOf("-"));
 			var contextId = "tcm:" + owningPubNr + it.slice(it.indexOf("-"));
