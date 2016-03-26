@@ -17,8 +17,8 @@ namespace Alchemy.Plugins.GoToOwningPub.Config
             // When adding files you only need to specify the filename and not full path
             AddFile("GoToOwningPubCommand.js");
             AddFile("GoToOwningPublication.css");
-            AddFile("GoToOwningPublication.ico");
-            AddFile("GoToOwningPublication.png");
+            //AddFile("GoToOwningPublication.ico");
+            //AddFile("GoToOwningPublication.png");
 
             // When referencing commandsets you can just use the generic AddFile with your CommandSet as the type.
             AddFile<GoToOwnPubCommandSet>();
