@@ -16,6 +16,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{7124E2
 		Images\UserList.png = Images\UserList.png
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{8C65B1F0-0A4F-430F-871B-20B6832A38D5}"
+	ProjectSection(SolutionItems) = preProject
+		Install-A4T-plugin-ExportUserList.bat = Install-A4T-plugin-ExportUserList.bat
+		Install-A4T-plugin.cmd = Install-A4T-plugin.cmd
+		Install-A4T-Plugin.ps1 = Install-A4T-Plugin.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
