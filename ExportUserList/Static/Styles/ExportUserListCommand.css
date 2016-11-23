@@ -1,0 +1,19 @@
+﻿/**
+ * Style the context menu button... #export_user_list_cm is defined in our Context Menu Extension class' AssignId property
+ */
+.contextmenu #export_user_list_cm > .image {
+    background-image: url('${ImgUrl}ExportUserList-16x16.png');
+}
+
+/**
+ * Style the ribbon tool bar button... #ExportUserListToCsvButton is defined in our Ribbon Toolbar Button class' AssignId property
+ */
+/* main icon in full ribbon mode */
+.ribbontoolbar #ExportUserListToCsvButton.button .image {
+    background-image: url('${ImgUrl}ExportUserList-32x32.png');
+}
+
+/* main icon in minimized ribbon mode */
+.ribbontoolbar.minimized #ExportUserListToCsvButton.button .image {
+    background-image: url('${ImgUrl}ExportUserList-16x16.png');
+}

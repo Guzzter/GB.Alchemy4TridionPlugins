@@ -1,14 +1,16 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
+using ExportUserList;
+
 // General Information about an assembly is controlled through the following set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Alchemy.Plugins.GoToOwningPub")]
-[assembly: AssemblyDescription("Adds a context menu command to open a TCM item in it's owning publication. Saves moving up and down the Blueprint structure.")]
+[assembly: AssemblyTitle(PluginConstants.Plugin.Name)]
+[assembly: AssemblyDescription(PluginConstants.Plugin.WebstoreDescription)]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Alchemy.Plugins.GoToOwningPub")]
-[assembly: AssemblyCopyright("Copyright © Gbeltman 2015")]
+[assembly: AssemblyProduct(PluginConstants.Plugin.Name)]
+[assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -17,12 +19,12 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("3a0ebe17-3543-4f44-b2ce-942b08613efa")]
+[assembly: Guid("fd9d4ee8-9a5a-424b-a7f6-047900ce6ae1")]
 
 // Version information for an assembly consists of the following four values:
 //
 // Major Version Minor Version Build Number Revision
 //
 // You can specify all the values or you can default the Build and Revision Numbers by using the '*' as shown below: [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.0.0")]
-[assembly: AssemblyFileVersion("1.2.0.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
