@@ -6,6 +6,7 @@ using Alchemy4Tridion.Plugins;
 namespace ExportUserList.Controllers
 {
     using System.IO;
+    using System.Linq;
     using System.Net;
     using System.Net.Http.Headers;
     using System.Text;
@@ -30,22 +31,49 @@ namespace ExportUserList.Controllers
         [Route("UserListToCsv")]
         public HttpResponseMessage UserListToCsv()
         {
-            MemoryStream stream = new MemoryStream();
-            StreamWriter writer = new StreamWriter(stream);
-            writer.Write(BuildUserListAsCsv());
-            writer.Flush();
-            stream.Position = 0;
+            try
+            {
+                MemoryStream stream = new MemoryStream();
+                StreamWriter writer = new StreamWriter(stream);
+                writer.Write(this.BuildUserListAsCsv());
+                writer.Flush();
+                stream.Position = 0;
 
-            HttpResponseMessage result = new HttpResponseMessage(HttpStatusCode.OK);
-            result.Content = new StreamContent(stream);
-            result.Content.Headers.ContentType = new MediaTypeHeaderValue("text/csv");
-            result.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment") { FileName = "Export.csv" };
-            return result;
+                HttpResponseMessage result = new HttpResponseMessage(HttpStatusCode.OK);
+                result.Content = new StreamContent(stream);
+                result.Content.Headers.ContentType = new MediaTypeHeaderValue("text/csv");
+                result.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
+                {
+                    FileName = string.Format("UserListExport-{0}.csv", DateTime.Now.ToString("yyyyMMddHHmmss"))
+                };
+                return result;
+            }
+            catch (Exception ex)
+            {
+#if RELEASE
+
+                //throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.Message));
+#endif
+#if DEBUG
+
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine(ex.Message);
+                sb.AppendLine(ex.Source);
+                sb.AppendLine(ex.StackTrace);
+                HttpResponseMessage result = new HttpResponseMessage(HttpStatusCode.OK);
+                result.Content = new StringContent(sb.ToString());
+                return result;
+#endif
+            }
         }
 
         private void AddCsvLine(StringBuilder sb, params string[] items)
         {
-            sb.AppendFormat("\u0022{0}\u0022", string.Join("\u0022,\u0022", items)).AppendLine();
+            //Filter out the seperator char from the value to prevent wrong columns
+            items = items.Select(x => x.Replace(",", "")).ToArray();
+
+            //sb.AppendFormat("\u0022{0}\u0022", string.Join("\u0022,\u0022", items)).AppendLine();
+            sb.AppendLine(string.Join(",", items));
         }
 
         /// <summary>
@@ -54,57 +82,31 @@ namespace ExportUserList.Controllers
         /// <returns></returns>
         private string BuildUserListAsCsv()
         {
-            SessionAwareCoreServiceClient client = null;
-
-            try
+            StringBuilder sb = new StringBuilder();
+            this.AddCsvLine(sb, "Nr.", "Title", "Id", "Description", "Is enabled", "Is administrator");
+            UsersFilterData usersFilterData = new UsersFilterData
             {
-                // Creates a new core service client
-                client = new SessionAwareCoreServiceClient("netTcp_2013");
+                BaseColumns = ListBaseColumns.Id,
+                IsPredefined = false,
+                ItemType = ItemType.User
+            };
 
-                UsersFilterData usersFilterData = new UsersFilterData
-                {
-                    BaseColumns = ListBaseColumns.Id,
-                    IsPredefined = false,
-                    ItemType = ItemType.User
-                };
+            int rowCounter = 1;
 
-                int i = 1;
-                StringBuilder sb = new StringBuilder();
-                AddCsvLine(sb, "Nr.", "Title", "Id", "Description", "Is enabled", "Is administrator");
-                foreach (XElement itemXml in client.GetSystemWideListXml(usersFilterData).Elements())
-                {
-                    UserData user = (UserData)client.Read(itemXml.Attribute("ID").Value, new ReadOptions());
-                    AddCsvLine(
-                        sb,
-                        "" + i,
-                        user.Title,
-                        user.Id,
-                        user.Description,
-                        user.IsEnabled.ToString(),
-                        user.Privileges.ToString());
-                }
-                return sb.ToString();
-            }
-            catch (Exception ex)
+            foreach (XElement itemXml in Client.GetSystemWideListXml(usersFilterData).Elements())
             {
-                // proper way of ensuring that the client gets closed... we close it in our try block above, then in a catch block if an exception is
-                // thrown we abort it.
-                if (client != null)
-                {
-                    client.Abort();
-                }
+                UserData user = (UserData)Client.Read(itemXml.Attribute("ID").Value, new ReadOptions());
+                this.AddCsvLine(
+                    sb,
+                    "" + rowCounter++,
+                    user.Title,
+                    user.Id,
+                    user.Description,
+                    (user.IsEnabled.HasValue ? user.IsEnabled.Value : false).ToString(),
+                    ((user.Privileges.HasValue ? user.Privileges.Value : 0) == 1).ToString());
+            }
 
-                // we are rethrowing the original exception and just letting webapi handle it
-                throw ex;
-            }
-            finally
-            {
-                // We no longer need our core service client so we close it now to free resources
-                if (client != null)
-                {
-                    client.Close();
-                }
-            }
+            return sb.ToString();
         }
     }
 }
