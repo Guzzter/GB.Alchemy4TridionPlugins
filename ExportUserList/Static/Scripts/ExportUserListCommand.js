@@ -12,10 +12,14 @@ Alchemy.command("${PluginName}", "ExportUserListToCsv", {
     },
 
     isAvailable: function (selection, pipeline) {
+
+        // Check if newUser is enabled: then you have rights to export users
         return $commands.getCommand("NewUser").isAvailable(selection, pipeline);
     },
 
     isEnabled: function (selection, pipeline) {
+
+        // Check if newUser is enabled: then you have rights to export users
         return $commands.getCommand("NewUser").isEnabled(selection, pipeline);
     },
 
@@ -23,7 +27,11 @@ Alchemy.command("${PluginName}", "ExportUserListToCsv", {
      * Executes your command. You can use _execute or execute as the property name.
      */
     execute: function () {
-        var progress = $messages.registerProgress("Getting ready to say hello...", null);
+        var progress = $messages.registerProgress("Getting ready to export users...", null);
+        var d = new Date();
+        var n = d.getTime();
+        window.open('/Alchemy/Plugins/Export_User_List/api/ExportService/UserListToCsv?__t=' + n, '_blank');
+        /*
 
         // This is the Promise pattern that the webapi proxy js exposes. Look at another example to
         // see how the callback method can also be used. Your WebAPI controller's route and route prefix
@@ -32,7 +40,7 @@ Alchemy.command("${PluginName}", "ExportUserListToCsv", {
             .success(function (message) {
 
                 // first arg in success is what's returned by your controller's action
-                $messages.registerGoal(message);
+                //$messages.registerGoal(message);
             })
             .error(function (type, error) {
 
@@ -44,6 +52,6 @@ Alchemy.command("${PluginName}", "ExportUserListToCsv", {
 
                 // this is called regardless of success or failure.
                 progress.finish();
-            });
+            });*/
     }
 });

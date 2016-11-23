@@ -94,6 +94,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Alchemy4Tridion.Plugin.1.0.0-beta8-1\build\net40\Alchemy4Tridion.Plugin.targets" Condition="Exists('..\packages\Alchemy4Tridion.Plugin.1.0.0-beta8-1\build\net40\Alchemy4Tridion.Plugin.targets')" />
+  <Target Name="A4TPostBuildEvents" AfterTargets="Build">
+    <Exec Command="..\Install-A4T-plugin-ExportUserList.bat $(OutDir)$(TargetName).a4t" />
+  </Target>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
