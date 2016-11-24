@@ -1,7 +1,7 @@
 # GB.Alchemy4TridionPlugins
 My personal collection of Tridion/Web8 plugins stored in [Alchemy Webstore](http://alchemywebstore.com)
 
-## Go To Owning publication
+## Go To Owning Publication
 Adds a context menu command to open a TCM item in it's owning publication. Saves moving up and down the Blueprint structure.
 
 Compatible with Tridion 2013 and Web 8.
@@ -10,3 +10,10 @@ Compatible with Tridion 2013 and Web 8.
 
 [Alchemy-less version can be found here](https://github.com/Guzzter/GoToOwningPublication)
 
+## Export User List
+Adds a new Export User List option to the ribbon and tool bar, allowing to download the userlist as CSV.
+
+Compatible with Tridion 2013 and Web 8.
+
+## Save Close and Publish
+...
