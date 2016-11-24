@@ -19,9 +19,8 @@
             this.PageId = Constants.PageIds.AdministrationPage;
 
             // Option GroupId, put this into an existing group (not capable if using a .ascx Control)
-            this.GroupId = Constants.GroupIds.AdministrationPage.AccessManagementGroup;
-            this.GroupId = @"AccessManagementGroup";
-            this.InsertBefore = @"UsersDropdown";
+            this.GroupId = Constants.GroupIds.HomePage.ManageGroup;
+            this.InsertBefore = @"SaveNewBtn";
 
             // The tooltip label that will get applied.
             this.Title = PluginConstants.Command.RibbonToolTip;
@@ -31,8 +30,6 @@
 
             // apply the extension to a specific view.
             this.Apply.ToView(Constants.Views.DashboardView, "DashboardToolbar");
-
-            this.PageId = Constants.PageIds.AdministrationPage;
         }
     }
 }

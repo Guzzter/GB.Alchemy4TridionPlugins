@@ -12,9 +12,11 @@ Alchemy.command("${PluginName}", "SaveCloseAndPublish", {
     },
 
     isAvailable: function (selection, pipeline) {
+        console.log(selection);
+        console.log(this.getParameterByName("tcm"));
 
         // Check if newUser is enabled: then you have rights to export users
-        return $commands.getCommand("NewUser").isAvailable(selection, pipeline);
+        return $commands.getCommand("SaveCloseBtn").isAvailable(selection, pipeline);
     },
 
     isEnabled: function (selection, pipeline) {
@@ -27,9 +29,10 @@ Alchemy.command("${PluginName}", "SaveCloseAndPublish", {
      * Executes your command. You can use _execute or execute as the property name.
      */
     execute: function () {
-        var progress = $messages.registerProgress("Getting ready to export users...", null);
+        var progress = $messages.registerProgress("Save Close And Publish", null);
         var d = new Date();
         var n = d.getTime();
+        $commands.getCommand("SaveCloseBtn").execute();
 
         /*
 
@@ -53,5 +56,16 @@ Alchemy.command("${PluginName}", "SaveCloseAndPublish", {
                 // this is called regardless of success or failure.
                 progress.finish();
             });*/
+    },
+    getParameterByName: function (name, url) {
+        if (!url) {
+            url = window.location.href;
+        }
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
 });

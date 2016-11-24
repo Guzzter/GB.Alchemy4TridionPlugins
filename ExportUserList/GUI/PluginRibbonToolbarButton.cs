@@ -33,8 +33,6 @@
 
             // apply the extension to a specific view.
             this.Apply.ToView(Constants.Views.DashboardView, "DashboardToolbar");
-
-            this.PageId = Constants.PageIds.AdministrationPage;
         }
     }
 }
