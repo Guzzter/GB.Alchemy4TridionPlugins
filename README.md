@@ -1,6 +1,8 @@
 # GB.Alchemy4TridionPlugins
 My personal collection of Tridion/Web8 plugins stored in [Alchemy Webstore](http://alchemywebstore.com)
 
+[![Build status](https://ci.appveyor.com/api/projects/status/tkqs6mfsfljkmlr9?svg=true)](https://ci.appveyor.com/project/GuusBeltman/gb-alchemy4tridionplugins)
+
 ## Go To Owning Publication
 Adds a context menu command to open a TCM item in it's owning publication. Saves moving up and down the Blueprint structure.
 
