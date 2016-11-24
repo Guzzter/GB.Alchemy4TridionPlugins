@@ -19,8 +19,8 @@ Alchemy.command("${PluginName}", "ExportUserListToCsv", {
 
     isEnabled: function (selection, pipeline) {
 
-        // Check if newUser is enabled: then you have rights to export users
-        return this.isAvailable();
+        // Always enable when command is available
+        return this.isAvailable(selection, pipeline);
     },
 
     /**

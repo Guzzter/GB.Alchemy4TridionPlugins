@@ -14,15 +14,17 @@ Alchemy.command("${PluginName}", "SaveCloseAndPublish", {
     isAvailable: function (selection, pipeline) {
         console.log(selection);
         console.log(this.getParameterByName("tcm"));
+        var cmd = $commands.getCommand("SaveCloseBtn");
+        console.log(cmd);
 
         // Check if newUser is enabled: then you have rights to export users
-        return $commands.getCommand("SaveCloseBtn").isAvailable(selection, pipeline);
+        return true; //.isAvailable();
     },
 
     isEnabled: function (selection, pipeline) {
 
-        // Check if newUser is enabled: then you have rights to export users
-        return this.isAvailable();
+        // Always enable when command is available
+        return this.isAvailable(selection, pipeline);
     },
 
     /**
@@ -33,6 +35,8 @@ Alchemy.command("${PluginName}", "SaveCloseAndPublish", {
         var d = new Date();
         var n = d.getTime();
         $commands.getCommand("SaveCloseBtn").execute();
+        /* TODO: make call and see if there is only one target */
+        /* Config: add default target names + publish prio */
 
         /*
 
