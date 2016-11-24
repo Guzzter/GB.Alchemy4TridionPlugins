@@ -1,4 +1,4 @@
-﻿namespace ExportUserList.GUI
+﻿namespace SaveCloseAndPublish.GUI
 {
     public class PluginCommandSet : Alchemy4Tridion.Plugins.GUI.Configuration.CommandSet
     {

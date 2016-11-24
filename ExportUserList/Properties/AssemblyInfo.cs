@@ -5,11 +5,11 @@ using ExportUserList;
 
 // General Information about an assembly is controlled through the following set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle(PluginConstants.Plugin.Name)]
-[assembly: AssemblyDescription(PluginConstants.Plugin.WebstoreDescription)]
+[assembly: AssemblyTitle(PluginConstants.Name)]
+[assembly: AssemblyDescription(PluginConstants.WebstoreDescription)]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct(PluginConstants.Plugin.Name)]
+[assembly: AssemblyProduct(PluginConstants.Name)]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

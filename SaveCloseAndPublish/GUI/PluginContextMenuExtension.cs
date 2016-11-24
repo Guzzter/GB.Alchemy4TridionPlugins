@@ -1,8 +1,6 @@
-﻿namespace ExportUserList.GUI
+﻿namespace SaveCloseAndPublish.GUI
 {
     using Alchemy4Tridion.Plugins.GUI.Configuration;
-
-    using ExportUserList;
 
     public class PluginContextMenuExtension : Alchemy4Tridion.Plugins.GUI.Configuration.ContextMenuExtension
     {

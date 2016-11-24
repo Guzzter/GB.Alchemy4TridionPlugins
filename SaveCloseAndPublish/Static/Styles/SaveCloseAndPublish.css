@@ -1,0 +1,19 @@
+﻿/**
+ * Style the context menu button... #save_close_and_publish_cm is defined in our Context Menu Extension class' AssignId property
+ */
+.contextmenu #save_close_and_publish_cm > .image {
+    background-image: url('${ImgUrl}SaveCloseAndPublish-16x16.png');
+}
+
+/**
+ * Style the ribbon tool bar button... #SaveCloseAndPublishButton is defined in our Ribbon Toolbar Button class' AssignId property
+ */
+/* main icon in full ribbon mode */
+.ribbontoolbar #SaveCloseAndPublishButton.button .image {
+    background-image: url('${ImgUrl}SaveCloseAndPublish-32x32.png');
+}
+
+/* main icon in minimized ribbon mode */
+.ribbontoolbar.minimized #SaveCloseAndPublishButton.button .image {
+    background-image: url('${ImgUrl}SaveCloseAndPublish-16x16.png');
+}

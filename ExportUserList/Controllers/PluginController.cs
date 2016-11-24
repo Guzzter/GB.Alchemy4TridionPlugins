@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Net.Http;
 using System.Web.Http;
-using Alchemy4Tridion.Plugins;
 
-namespace ExportUserList.Controllers
+namespace Alchemy4Tridion.Plugins.GUI.Configuration.Controllers
 {
     using System.IO;
     using System.Linq;

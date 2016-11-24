@@ -1,8 +1,6 @@
-﻿namespace ExportUserList.GUI
+﻿namespace SaveCloseAndPublish.GUI
 {
     using Alchemy4Tridion.Plugins.GUI.Configuration;
-
-    using ExportUserList;
 
     public class PluginRibbonToolbarButton : RibbonToolbarExtension
     {
@@ -21,8 +19,8 @@
             this.PageId = Constants.PageIds.AdministrationPage;
 
             // Option GroupId, put this into an existing group (not capable if using a .ascx Control)
-            //GroupId = Constants.GroupIds.HomePage.ShareGroup;
             this.GroupId = Constants.GroupIds.AdministrationPage.AccessManagementGroup;
+            this.GroupId = @"AccessManagementGroup";
             this.InsertBefore = @"UsersDropdown";
 
             // The tooltip label that will get applied.
