@@ -3,9 +3,6 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Net;
-    using System.Net.Http;
-    using System.Text;
     using System.Web.Http;
     using System.Xml.Linq;
 
@@ -32,7 +29,7 @@
         [Route("SaveAndPublish/{tcm}")]
         public string SaveAndPublish(string tcm)
         {
-            string response = "Page published to: ";
+            string response = "Page '{0}' is published to: ";
             try
             {
                 tcm = "tcm:" + tcm;
@@ -40,14 +37,17 @@
                 var pageData = this.Client.Read(tcm, new ReadOptions()) as PageData;
                 if (pageData != null)
                 {
-                    //TODO if (pageData.IsEditable.HasValue)
-
                     if (pageData.IsEditable.HasValue && pageData.IsEditable.Value)
                     {
                         this.Client.Save(pageData, new ReadOptions());
-                        this.Client.CheckIn(tcm, true, "Saved an published", new ReadOptions());
+                        this.Client.CheckIn(tcm, true, "Saved and published", new ReadOptions());
                     }
+                    response = string.Format(response, pageData.Title);
                     response += this.PublishPage(tcm, pageData, settings.PublishPrio ?? string.Empty, settings.PublishTargetNamesCsv ?? string.Empty);
+                }
+                else
+                {
+                    throw new ArgumentException("Could not find page: " + tcm);
                 }
             }
             catch (Exception ex)
@@ -72,7 +72,7 @@
         {
             if (page == null)
             {
-                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Could not find page: " + tcm));
+                throw new ArgumentException("Could not find page: " + tcm);
             }
 
             string pubId = page.LocationInfo.ContextRepository.IdRef;
@@ -80,7 +80,7 @@
             List<KeyValuePair<string, string>> targets = this.TargetTypesForPublication(pubId);
             if (targets == null)
             {
-                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Skipped publishing, no suitable publish targets available for publication: " + pubId));
+                throw new ArgumentException("Skipped publishing, no suitable publish targets available for publication: " + pubId);
             }
 
             var items = targets.Where(x => listPublishTargetNames.Contains(x.Value)).ToList();
@@ -110,7 +110,7 @@
             }
             else
             {
-                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Skipped publishing, no suitable publish targets configured."));
+                throw new Exception("Skipped publishing, no suitable publish targets configured.");
             }
 
             return targetsPublished;
