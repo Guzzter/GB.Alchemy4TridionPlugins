@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.alchemywebstore.com/">
-  <description><![CDATA[Adds a new Export User List option to the ribbon and tool bar, allowing to download the userlist as CSV.]]></description>
+<plugin xmlns:c="https://www.alchemywebstore.com/configuration/definitions" xmlns="http://www.alchemywebstore.com/">
   <name>Export_User_List</name>
+  <description><![CDATA[Adds a new Export User List option to the ribbon and tool bar, allowing to download the userlist as CSV.]]></description>
+  <references />
+  <frameworkVersion>0.8.1.0</frameworkVersion>
 </plugin>

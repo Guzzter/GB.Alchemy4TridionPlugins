@@ -18,7 +18,7 @@
 
             // AddWebApiProxy() includes Alchemy.Core as a dependency already... if not using the proxy you can remove the comment from below.
 
-            // Dependencies.AddAlchemyCore();
+            this.Dependencies.AddAlchemyCore();
         }
     }
 }

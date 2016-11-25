@@ -16,11 +16,11 @@
             this.Name = PluginConstants.Command.RibbonName;
 
             // The page tab to assign this extension to. See Constants.PageIds.
-            this.PageId = Constants.PageIds.AdministrationPage;
+            this.PageId = Constants.PageIds.HomePage;
 
             // Option GroupId, put this into an existing group (not capable if using a .ascx Control)
             this.GroupId = Constants.GroupIds.HomePage.ManageGroup;
-            this.InsertBefore = @"SaveNewBtn";
+            this.InsertBefore = @"SaveNew";
 
             // The tooltip label that will get applied.
             this.Title = PluginConstants.Command.RibbonToolTip;
@@ -29,7 +29,7 @@
             this.Dependencies.Add<PluginResourceGroup>();
 
             // apply the extension to a specific view.
-            this.Apply.ToView(Constants.Views.DashboardView, "DashboardToolbar");
+            this.Apply.ToView(Constants.Views.PageView, "ItemToolbar");
         }
     }
 }

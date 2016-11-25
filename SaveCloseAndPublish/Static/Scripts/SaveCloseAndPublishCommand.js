@@ -12,13 +12,12 @@ Alchemy.command("${PluginName}", "SaveCloseAndPublish", {
     },
 
     isAvailable: function (selection, pipeline) {
-        console.log(selection);
-        console.log(this.getParameterByName("tcm"));
-        var cmd = $commands.getCommand("SaveCloseBtn");
-        console.log(cmd);
+        var isPage = this.getParameterByName("tcm") === "64";
+        var saveCloseCmd = $commands.getCommand("SaveClose");
+        var isSaveClosePossible = saveCloseCmd.isAvailable();
 
-        // Check if newUser is enabled: then you have rights to export users
-        return true; //.isAvailable();
+        debugger;
+        return isPage && isSaveClosePossible;
     },
 
     isEnabled: function (selection, pipeline) {
@@ -30,11 +29,20 @@ Alchemy.command("${PluginName}", "SaveCloseAndPublish", {
     /**
      * Executes your command. You can use _execute or execute as the property name.
      */
-    execute: function () {
+    execute: function (selection) {
         var progress = $messages.registerProgress("Save Close And Publish", null);
-        var d = new Date();
-        var n = d.getTime();
-        $commands.getCommand("SaveCloseBtn").execute();
+        var item = $models.getItem(selection.getItem(0));
+        console.log(item);
+        debugger;
+        var saveCloseCmd = $commands.getCommand("SaveClose");
+        if (saveCloseCmd) {
+            saveCloseCmd.execute(selection);
+            var publishCmd = $commands.getCommand("Publish");
+            if (publishCmd) {
+                publishCmd.execute(selection);
+            }
+        }
+
         /* TODO: make call and see if there is only one target */
         /* Config: add default target names + publish prio */
 
