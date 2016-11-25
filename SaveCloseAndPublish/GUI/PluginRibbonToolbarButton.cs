@@ -20,7 +20,7 @@
 
             // Option GroupId, put this into an existing group (not capable if using a .ascx Control)
             this.GroupId = Constants.GroupIds.HomePage.ManageGroup;
-            this.InsertBefore = @"SaveNew";
+            this.InsertBefore = @"SaveNewBtn";
 
             // The tooltip label that will get applied.
             this.Title = PluginConstants.Command.RibbonToolTip;

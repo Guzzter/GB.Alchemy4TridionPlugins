@@ -16,7 +16,7 @@
             public const string CmdName = "SaveCloseAndPublish";
             public const string ContentMenuId = "save_close_and_publish_cm"; //Should match in CSS
 
-                                                                             // Should match Alchemy.command in ...Command.js
+            // Should match Alchemy.command in ...Command.js
             public const string RibbonButtonId = "SaveCloseAndPublishButton"; //Should match in CSS
 
             public const string RibbonName = WebstoreName;
