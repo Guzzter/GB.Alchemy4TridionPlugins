@@ -14,11 +14,11 @@
             this.AddFile<PluginCommandSet>();
 
             // Adds the web api proxy JS to this resource group... this allows us to call our webapi service without any 3rd party libs.
-            //this.AddWebApiProxy();
+            this.AddWebApiProxy();
 
-            // AddWebApiProxy() includes Alchemy.Core as a dependency already... if not using the proxy you can remove the comment from below.
+            //AddWebApiProxy() includes Alchemy.Core as a dependency already... if not using the proxy you can remove the comment from below.
 
-            this.Dependencies.AddAlchemyCore();
+            //this.Dependencies.AddAlchemyCore();
         }
     }
 }

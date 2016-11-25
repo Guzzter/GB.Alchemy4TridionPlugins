@@ -33,34 +33,21 @@ Alchemy.command("${PluginName}", "SaveCloseAndPublish", {
      */
     execute: function (selection, pipeline) {
         var progress = $messages.registerProgress("Save Close And Publish", null);
-        var item = $models.getItem(selection.getItem(0));
-        debugger;
-        console.log(opener);
-
-        var saveCloseCmd = $commands.getCommand("SaveClose");
-        if (saveCloseCmd) {
-            saveCloseCmd.invoke(selection, pipeline);
-            var publishCmd = $commands.getCommand("Publish");
-            if (publishCmd) {
-
-                //publishCmd.invoke(selection, pipeline);
-                _openPublishPopup(item);
-            }
-        }
-
-        /* TODO: make call and see if there is only one target */
-        /* Config: add default target names + publish prio */
-        /* Config: open publish queue dialog after publish */
-        /*
+        var tcm = selection.getItem(0).replace("tcm:", "");
 
         // This is the Promise pattern that the webapi proxy js exposes. Look at another example to
         // see how the callback method can also be used. Your WebAPI controller's route and route prefix
         // attributes controls how the namespace is generated.
-        Alchemy.Plugins["${PluginName}"].Api.ExportService.userListToCsv()
+        Alchemy.Plugins["${PluginName}"].Api.PublishService.saveAndPublish(tcm)
             .success(function (message) {
 
                 // first arg in success is what's returned by your controller's action
-                //$messages.registerGoal(message);
+                $messages.registerGoal(message);
+
+                var saveCloseCmd = $commands.getCommand("SaveClose");
+                if (saveCloseCmd) {
+                    saveCloseCmd.invoke(selection, pipeline);
+                }
             })
             .error(function (type, error) {
 
@@ -72,7 +59,7 @@ Alchemy.command("${PluginName}", "SaveCloseAndPublish", {
 
                 // this is called regardless of success or failure.
                 progress.finish();
-            });*/
+            });
     },
     _getParameterByName: function (name, url) {
         if (!url) {

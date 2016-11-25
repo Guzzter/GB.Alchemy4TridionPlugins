@@ -1,15 +1,16 @@
-﻿using System;
-using System.Net.Http;
-using System.Web.Http;
-
-namespace Alchemy4Tridion.Plugins.GUI.Configuration.Controllers
+﻿namespace ExportUserList.Controllers
 {
+    using System;
     using System.IO;
     using System.Linq;
     using System.Net;
+    using System.Net.Http;
     using System.Net.Http.Headers;
     using System.Text;
+    using System.Web.Http;
     using System.Xml.Linq;
+
+    using Alchemy4Tridion.Plugins;
 
     using Tridion.ContentManager.CoreService.Client;
 
@@ -92,9 +93,9 @@ namespace Alchemy4Tridion.Plugins.GUI.Configuration.Controllers
 
             int rowCounter = 1;
 
-            foreach (XElement itemXml in Client.GetSystemWideListXml(usersFilterData).Elements())
+            foreach (XElement itemXml in this.Client.GetSystemWideListXml(usersFilterData).Elements())
             {
-                UserData user = (UserData)Client.Read(itemXml.Attribute("ID").Value, new ReadOptions());
+                UserData user = (UserData)this.Client.Read(itemXml.Attribute("ID").Value, new ReadOptions());
                 this.AddCsvLine(
                     sb,
                     "" + rowCounter++,
