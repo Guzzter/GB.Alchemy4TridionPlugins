@@ -50,20 +50,16 @@
             }
             catch (Exception ex)
             {
-#if RELEASE
-
-                //throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.Message));
-#endif
-#if DEBUG
-
-                StringBuilder sb = new StringBuilder();
-                sb.AppendLine(ex.Message);
-                sb.AppendLine(ex.Source);
-                sb.AppendLine(ex.StackTrace);
-                HttpResponseMessage result = new HttpResponseMessage(HttpStatusCode.OK);
-                result.Content = new StringContent(sb.ToString());
-                return result;
-#endif
+                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.Message));
+                /*
+                                StringBuilder sb = new StringBuilder();
+                                sb.AppendLine(ex.Message);
+                                sb.AppendLine(ex.Source);
+                                sb.AppendLine(ex.StackTrace);
+                                HttpResponseMessage result = new HttpResponseMessage(HttpStatusCode.OK);
+                                result.Content = new StringContent(sb.ToString());
+                                return result;
+                */
             }
         }
 
