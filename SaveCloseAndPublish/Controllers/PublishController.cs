@@ -41,15 +41,17 @@
                 PublishSettings settings = this.Plugin.Settings.Get<PublishSettings>();
 
                 // Check if we are the user that is modifying this item
-                var pageData = this.Client.TryCheckOut(tcm, new ReadOptions()) as PageData;
+                var pageData = this.Client.Read(tcm, new ReadOptions()) as PageData;
                 if (pageData != null)
                 {
                     // Save and checkin for publishing
-                    this.Client.Save(pageData, null);
-                    pageData = (PageData)this.Client.CheckIn(tcm, true, "Saved and published", new ReadOptions());
+                    //this.Client.Save(pageData, null);
+                    //pageData = (PageData)this.Client.CheckIn(tcm, true, "Saved and published", new ReadOptions());
 
                     // Publish the page to the configured Pub Targets
                     response = this.PublishPage(tcm, pageData, settings.PublishPrio ?? string.Empty, settings.PublishTargetNamesCsv ?? string.Empty);
+
+                    //this.Client.CheckOut(tcm, false, null);
                 }
                 else
                 {
@@ -151,7 +153,7 @@
             }
 
             string targetsPublished = string.Join(", ", items.Select(x => x.Value));
-            return string.Format("Page '{0}' ({1}) is published to: {2}", page.Title, page.Id, targetsPublished);
+            return string.Format("Page '{0}' is published to: {1}", page.Title, targetsPublished);
         }
 
         /// <summary>
