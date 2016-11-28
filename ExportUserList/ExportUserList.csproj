@@ -84,6 +84,7 @@
     <Content Include="a4t.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Static\icon.png" />
     <Content Include="Static\Scripts\ExportUserListToCsvCommand.js" />
     <Content Include="Static\Images\ExportUserList-16x16.png" />
     <Content Include="Static\Images\ExportUserList-32x32.png" />

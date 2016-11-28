@@ -85,6 +85,7 @@
     <Content Include="a4t.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Static\icon.png" />
     <Content Include="Static\Images\SaveAndPublish-16x16.png" />
     <Content Include="Static\Images\SaveAndPublish-32x32.png" />
     <Content Include="Static\Scripts\SaveCloseAndPublishCommand.js" />
