@@ -11,9 +11,11 @@ Alchemy.command("${PluginName}", "SaveCloseAndPublish", {
      */
     init: function () {
     },
-
     isAvailable: function (selection, pipeline) {
-        var isPage = this._getParameterByName("tcm") === "64";
+        var type = $models.getItemType(selection.getItem(0));
+        var isPage = (type === $const.ItemType.PAGE);
+        console.log(type);
+
         var saveCloseCmd = $commands.getCommand("SaveClose");
         var isSaveClosePossible = false;
         if (saveCloseCmd) {
@@ -34,45 +36,81 @@ Alchemy.command("${PluginName}", "SaveCloseAndPublish", {
      */
     execute: function (selection, pipeline) {
         function Save$execute$onSave(event) {
-
-            //console.log(event);
-            var selected = $display.getItem().getVersionlessId();
-            $display.getItem().checkIn(true);
+            var item = $display.getItem();
+            var selected = item.getVersionlessId();
+            item.checkIn(true);
             publishAndClose(selected);
         }
 
         function publishAndClose(tcm) {
-            var progress = $messages.registerProgress('Publishing ' + tcm, null);
 
             //console.log("publishAndClose = " + tcm);
 
             // This is the Promise pattern that the webapi proxy js exposes. Look at another example to
             // see how the callback method can also be used. Your WebAPI controller's route and route prefix
             // attributes controls how the namespace is generated.
-            Alchemy.Plugins["${PluginName}"].Api.PublishService.saveAndPublish(tcm.replace("tcm:", ""))
-                .success(function (message) {
+            Alchemy.Plugins["${PluginName}"].Api.getSettings()
+                .success(function (settings) {
+                    if (settings.PublishPrio && settings.PublishTargetNamesCsv && settings.PublishTargetNamesCsv !== "") {
 
-                    // first arg in success is what's returned by your controller's action
-                    $messages.registerGoal(message);
-                    window.close();
+                        // Pub target configured: publish directly without showing publish dialog
+                        var progress = $messages.registerProgress('Auto publishing ' + tcm + ' with prio ' + settings.PublishPrio, null);
+                        Alchemy.Plugins["${PluginName}"].Api.PublishService.saveAndPublish(tcm.replace("tcm:", ""))
+                            .success(function (message) {
+
+                                // first arg in success is what's returned by your controller's action
+                                $messages.registerGoal(message);
+                                window.close();
+                            })
+                            .error(function (type, error) {
+
+                                // first arg is string that shows the type of error ie (500 Internal), 2nd arg is object representing
+                                // the error.  For BadRequests and Exceptions, the error message will be in the error.message property.
+                                $messages.registerError("There was an error", error.message);
+                            })
+                            .complete(function () {
+
+                                // this is called regardless of success or failure.
+                                progress.finish();
+                            });
+                    } else {
+
+                        // Show publish dialog
+                        var params = {
+                            command: "publish",
+                            items: [tcm],
+                            republish: false,
+                            userWorkflow: false
+                        };
+                        var popup = $popupManager.createExternalContentPopup(Tridion.Web.UI.Editors.CME.Constants.Popups.PUBLISH.URL, Tridion.Web.UI.Editors.CME.Constants.Popups.PUBLISH.FEATURES, params);
+
+                        var handleCancel = function PopupManager$createDisposingExternalContentPopup$onPopupCanceled(event) {
+                            popup.close();
+                        };
+
+                        var handleClosed = function PopupManager$createDisposingExternalContentPopup$handleClosed(event) {
+
+                            //$popupManager.properties.popups = {};
+                            window.close();
+                        };
+
+                        // Maybe not all popups have a cancel event, but this makes it easier in case the popup does.
+                        $evt.addEventHandler(popup, "cancel", handleCancel);
+                        $evt.addEventHandler(popup, "closed", handleClosed);
+
+                        popup.open();
+                    }
                 })
-                .error(function (type, error) {
-
-                    // first arg is string that shows the type of error ie (500 Internal), 2nd arg is object representing
-                    // the error.  For BadRequests and Exceptions, the error message will be in the error.message property.
-                    $messages.registerError("There was an error", error.message);
-                })
-                .complete(function () {
-
-                    // this is called regardless of success or failure.
-                    progress.finish();
+                .error(function (error) {
+                    console.error("Could not load settings for SaveCloseAndPublish");
                 });
         }
 
         var item = $display.getItem();
         var isChanged = !item.isReadOnly() && item.getChanged() && !item.isLoading();
 
-        //console.log("isChanged = " + isChanged);
+        //console.log('isChanged = ' + isChanged);
+
         if (isChanged) {
             $evt.addEventHandler(item, "save", Save$execute$onSave);
             $commands.getCommand("Save").invoke(selection, pipeline);
@@ -80,16 +118,5 @@ Alchemy.command("${PluginName}", "SaveCloseAndPublish", {
             item.undoCheckOut(true);
             publishAndClose(item.getVersionlessId());
         }
-    },
-    _getParameterByName: function (name, url) {
-        if (!url) {
-            url = window.location.href;
-        }
-        name = name.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
 });
