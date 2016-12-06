@@ -17,9 +17,9 @@
             public const string ContentMenuId = "cm_usagereport"; //Should match in CSS
 
             // Should match Alchemy.command in ...Command.js
-            public const string RibbonButtonId = "SaveCloseAndPublishButton"; //Should match in CSS
+            public const string RibbonButtonId = "UsageReportButton"; //Should match in CSS
 
-            public const string RibbonName = "Save, Close and Publish";
+            public const string RibbonName = "Usage Report";
             public const string RibbonToolTip = WebstoreName;
         }
     }

@@ -24,7 +24,7 @@ namespace UsageReport.Config
             Name = PluginConstants.WebstoreName;
 
             // Which Page tab the extension will go on.
-            PageId = Constants.PageIds.HomePage;
+            PageId = "Reports";
 
             // Don't forget to add a dependency to the resource group that references the command set...
             Dependencies.Add<UsageReportResourceGroup>();

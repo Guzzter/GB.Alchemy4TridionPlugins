@@ -1,14 +1,17 @@
 using System;
-using System.ServiceModel;
-using System.Threading;
-using System.Web;
 using System.Web.Http;
 using System.Xml.Linq;
-using Alchemy4Tridion.Plugins;
-using Tridion.ContentManager.CoreService.Client;
 
 namespace UsageReport.Controllers
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
+    using Alchemy4Tridion.Plugins;
+
+    using Tridion.ContentManager.CoreService.Client;
+
     /// <summary>
     /// A WebAPI web service controller that can be consumed by your front end.
     /// </summary>
@@ -20,6 +23,8 @@ namespace UsageReport.Controllers
     [AlchemyRoutePrefix("UsageReportService")]
     public class UsageReportServiceController : AlchemyApiController
     {
+        /*
+
         // GET /Alchemy/Plugins/HelloExample/api/UsageReportService/PagesWhereUsed/tcm/title/depth
         /// <summary>
         /// Finds any pages on which a Tridion object are used
@@ -90,28 +95,7 @@ namespace UsageReport.Controllers
                 }
             }
         }
-
-        /// <summary>
-        /// Borrowed from Tridion.Web.UI.Core.Utils, this gets the current username to be used in core service impersonation
-        /// </summary>
-        /// <returns>String containing the username</returns>
-        public string GetUserName()
-        {
-            string text = string.Empty;
-            if (HttpContext.Current != null && HttpContext.Current.User != null && HttpContext.Current.User.Identity != null)
-            {
-                text = HttpContext.Current.User.Identity.Name;
-            }
-            else if (ServiceSecurityContext.Current != null && ServiceSecurityContext.Current.WindowsIdentity != null)
-            {
-                text = ServiceSecurityContext.Current.WindowsIdentity.Name;
-            }
-            if (string.IsNullOrEmpty(text))
-            {
-                text = Thread.CurrentPrincipal.Identity.Name;
-            }
-            return text;
-        }
+        */
 
         // GET /Alchemy/Plugins/HelloExample/api/UsageReportService/UsingAndUsedItems/tcm/title
         /// <summary>
@@ -121,109 +105,85 @@ namespace UsageReport.Controllers
         /// <param name="title">The Title of a Tridion object for which this function should find the using and used items in Tridion</param>
         /// <returns>Formatted HTML containing the lists of using and used items for the input Tridion object</returns>
         [HttpGet]
-        [Route("UsingAndUsedItems/{tcm}/{title}")]
-        public string GetUsingAndUsedItems(string tcm, string title)
+        [Route("UseCountList/{tcm}/{title}")]
+        public string GetUseCountList(string tcm, string title)
         {
-            // Create a new, null Core Service Client
-            SessionAwareCoreServiceClient client = null;
             try
             {
-                // Creates a new core service client
-                client = new SessionAwareCoreServiceClient("netTcp_2013");
-
-                // Gets the current user so we can impersonate them for our client
-                string username = GetUserName();
-                client.Impersonate(username);
-
-                // Creates a new UsingItemsFilterData
-                UsingItemsFilterData usingFilter = new UsingItemsFilterData();
-
-                // Sets the included versions for the filter to only retrieve the latest versions
-                usingFilter.IncludedVersions = VersionCondition.OnlyLatestVersions;
+                // Creates a new OrganizationalItemItemsFilterData
+                OrganizationalItemItemsFilterData itemItemsFilterData = new OrganizationalItemItemsFilterData();
+                itemItemsFilterData.Recursive = false;
+                /*itemItemsFilterData.ItemTypes = new ItemType[1]
+                {
+        ItemType.Schema
+                };
+                itemItemsFilterData.SchemaPurposes = purpose;*/
 
                 // Use our filter to retrieve all the items the object our TCM refers to is being used by
-                XElement usingItemsXElement = client.GetListXml("tcm:" + tcm, usingFilter);
-
-                // Create a new filter for used items
-                UsedItemsFilterData usedFilter = new UsedItemsFilterData();
-
-                // Get all items using our Tridion object
-                XElement usedItemsXElement = client.GetListXml("tcm:" + tcm, usedFilter);
-
-                // We're done with our core service client so we close it now to free resources
-                client.Close();
+                XElement allElements = this.Client.GetListXml("tcm:" + tcm, itemItemsFilterData);
 
                 // Create a new string that will hold all the html we create to represent the information we retrieved above
-                string html = "";
-
-                // The first thing we add is a title explaining the first set of results, in this case the list of items using our object
-                html += "<h2>" + title + " is used by:</h2>";
-
-                // If didn't get any results we say so
-                if (!usingItemsXElement.HasElements)
-                {
-                    html += title + " is not being used by any items";
-                }
-                else
-                {
-                    // Otherwise we create a div to hold all of our results
-                    html += "<div class=\"usingItems results\">";
-
-                    // Get all of the items as XElements
-                    var usingItems = usingItemsXElement.Elements();
-
-                    // Create the "table" heading with a helper function
-                    html += CreateItemsHeading();
-
-                    // For each item in our results we call a CreateItem function to create the appropriate html
-                    foreach (XElement item in usingItems)
-                    {
-                        html += CreateItem(item);
-                    }
-
-                    // Close the div we opened above
-                    html += "</div>";
-                }
-
-                // Similar to what we did above, we add a title explaining the second set of results, all of the items our object is using
-                html += "<h2>" + title + " uses:</h2>";
+                StringBuilder sb = new StringBuilder("<h2>" + title + " contains:</h2>");
 
                 // If we got no results here we display this information
-                if (!usedItemsXElement.HasElements)
+                if (!allElements.HasElements)
                 {
-                    html += title + " is not using any items";
+                    sb.Append(title + " does not contain any items");
                 }
                 else
                 {
+                    var usageList = new List<ItemUsageDetails>();
+
                     // If we got results we create a div to hold them
-                    html += "<div class=\"usedItems results\">";
+                    sb.Append("<div class=\"usedItems results\">");
 
                     // Then we grab all of our items as XElements
-                    var usedItems = usedItemsXElement.Elements();
+                    var usedItems = allElements.Elements();
 
                     // Use a function to create our "table" heading
-                    html += CreateItemsHeading();
+                    sb.Append(CreateItemsHeading());
 
                     // For each item in our results we call a CreateItem function to create the appropriate html
                     foreach (XElement item in usedItems)
                     {
-                        html += CreateItem(item);
+                        var id = item.Attribute("ID")?.Value;
+                        int usageCount = this.WhereUsedCount(id);
+                        usageList.Add(new ItemUsageDetails
+                        {
+                            Icon = item.Attribute("Icon")?.Value,
+                            TcmId = id,
+                            Title = item.Attribute("Title")?.Value,
+                            WebDavLocation = item.Attribute("Path")?.Value,
+                            UsedCount = usageCount
+                        });
+                    }
+
+                    // Do sorting
+                    var sortedList = usageList.OrderBy(x => x.UsedCount);
+
+                    // Create HTML rows for each item
+                    foreach (var itemUsageDetails in sortedList)
+                    {
+                        sb.Append(this.CreateItem(itemUsageDetails));
                     }
 
                     // Close the div we opened above
-                    html += "</div>";
+                    sb.Append("</div>");
                 }
 
+                // We're done with our core service client so we close it now to free resources
+                this.Client.Close();
+
                 // Return the html we've built.
-                return html;
+                return sb.ToString();
             }
             catch (Exception ex)
             {
                 // proper way of ensuring that the client gets closed... we close it in our try block above, then in a catch block if an exception is
                 // thrown we abort it.
-                if (client != null)
+                if (this.Client != null)
                 {
-                    client.Abort();
+                    this.Client.Abort();
                 }
 
                 // we are rethrowing the original exception and just letting webapi handle it
@@ -236,13 +196,14 @@ namespace UsageReport.Controllers
         /// </summary>
         /// <param name="item">An XElement containing all information on a Tridion item</param>
         /// <returns>Formatted HTML presentation of key information for Tridion items</returns>
-        private string CreateItem(XElement item)
+        private string CreateItem(ItemUsageDetails item)
         {
             string html = "<div class=\"item\">";
-            html += "<div class=\"icon\" style=\"background-image: url(/WebUI/Editors/CME/Themes/Carbon2/icon_v7.1.0.66.627_.png?name=" + item.Attribute("Icon").Value + "&size=16)\"></div>";
-            html += "<div class=\"name\">" + item.Attribute("Title").Value + "</div>";
-            html += "<div class=\"path\">" + item.Attribute("Path").Value + "</div>";
-            html += "<div class=\"id\">" + item.Attribute("ID").Value + "</div>";
+            html += "<div class=\"icon\" style=\"background-image: url(/WebUI/Editors/CME/Themes/Carbon2/icon_v7.1.0.66.627_.png?name=" + item.Icon + "&size=16)\"></div>";
+            html += "<div class=\"usagecount\">" + item.UsedCount + "</div>";
+            html += "<div class=\"name\">" + item.Title + "</div>";
+            html += "<div class=\"path\">" + item.WebDavLocation + "</div>";
+            html += "<div class=\"id\">" + item.TcmId + "</div>";
             html += "</div>";
             return html;
         }
@@ -255,12 +216,31 @@ namespace UsageReport.Controllers
         {
             string html = "<div class=\"headings\">";
             html += "<div class=\"icon\">&nbsp</div>";
+            html += "<div class=\"usagecount\">Used #</div>";
             html += "<div class=\"name\">Name</div>";
             html += "<div class=\"path\">Path</div>";
             html += "<div class=\"id\">ID</div></div>";
 
             return html;
         }
+
+        /// <summary>
+        /// Gets the where used count.
+        /// </summary>
+        /// <param name="client">The client.</param>
+        /// <param name="tcmId">The TCM identifier.</param>
+        /// <returns/>
+        private int WhereUsedCount(string tcmId)
+        {
+            UsingItemsFilterData usingItemsFilterData1 = new UsingItemsFilterData();
+            usingItemsFilterData1.BaseColumns = ListBaseColumns.Id;
+            usingItemsFilterData1.IncludeLocalCopies = true;
+            usingItemsFilterData1.IncludedVersions = VersionCondition.OnlyLatestVersions;
+            UsingItemsFilterData usingItemsFilterData2 = usingItemsFilterData1;
+            return this.Client.GetList(tcmId, usingItemsFilterData2).Length;
+        }
+
+        /*
 
         /// <summary>
         /// Recursive function which checks a Tridion object's using items for pages, then moves on to any using items using items to check for pages, etc.
@@ -304,6 +284,6 @@ namespace UsageReport.Controllers
 
             // Return the modified html string
             return html;
-        }
+        }*/
     }
 }

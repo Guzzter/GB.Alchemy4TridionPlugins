@@ -6,6 +6,7 @@
  * conflicts with other scripts.
  */
 !(function () {
+    debugger;
 
     // Alchemy comes with jQuery and several other libraries already pre-installed so assigning
     // it a variable here eliminates the redundancy of loading my own copy, and avoids any conflicts over
@@ -38,7 +39,7 @@
 
         // This is the call to my controller where the core service code is used to gather the
         // where used and using information. It is returned as a string of HTML
-        Alchemy.Plugins["${PluginName}"].Api.UsageReportService.getUsingAndUsedItems(tcmInput, title)
+        Alchemy.Plugins["${PluginName}"].Api.UsageReportService.getUseCountList(tcmInput, title)
             .success(function (items) {
 
                 // First arg in success is what's returned by your controller's action
@@ -116,7 +117,7 @@
                 $j(".item").click(function () {
 
                     // When you click on an item we deselect any currently selected item
-                    $j(".item.selected").removeClass("selected")
+                    $j(".item.selected").removeClass("selected");
 
                     // And select the item you clicked on
                     $j(this).addClass("selected");
