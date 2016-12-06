@@ -1,0 +1,18 @@
+#ComponentView #GeneralTab
+{
+    padding: 0 10px 0 10px;
+}
+
+#ComponentView #GeneralTab #StandardFields
+{
+    margin: 20px 0;
+}
+#ComponentView #GeneralTab #SchemaBasedFields
+{
+    margin-bottom: 0;
+}
+#ComponentView #GeneralTab #SchemaFieldsPanel,
+#ComponentView #GeneralTab #SchemaFieldsPanel .body
+{
+    overflow: visible;
+}

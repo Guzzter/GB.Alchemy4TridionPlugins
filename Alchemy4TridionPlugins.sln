@@ -29,6 +29,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{8C65B1F0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveCloseAndPublish", "SaveCloseAndPublish\SaveCloseAndPublish.csproj", "{CA853C4B-E4A9-4836-BA20-605B5071E311}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiTester", "GuiTester\GuiTester.csproj", "{08B273D8-8066-4F9C-A7AB-B60CD9A26DD6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{CA853C4B-E4A9-4836-BA20-605B5071E311}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA853C4B-E4A9-4836-BA20-605B5071E311}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA853C4B-E4A9-4836-BA20-605B5071E311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08B273D8-8066-4F9C-A7AB-B60CD9A26DD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08B273D8-8066-4F9C-A7AB-B60CD9A26DD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08B273D8-8066-4F9C-A7AB-B60CD9A26DD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08B273D8-8066-4F9C-A7AB-B60CD9A26DD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

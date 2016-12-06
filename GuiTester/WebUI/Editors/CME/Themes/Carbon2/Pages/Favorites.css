@@ -1,0 +1,91 @@
+.tabcontrol > .body > .page.favorites
+{
+overflow:hidden;
+}
+
+.tabswitch.favorites > .tabswitchContent > .icon
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.32px.png);
+background-position:0 -64px;
+}
+
+.tabswitch > .tabswitchContent > .icon.favorites
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.32px.png);
+background-position:0 -64px;
+}
+
+.itemsList
+{
+padding:20px;
+}
+
+.itemsList > .item
+{
+position:relative;
+margin-top:15px;
+margin-bottom:15px;
+border-bottom:1px solid #DDDDDD;
+min-height:40px;
+}
+
+.itemsList > .item > .icon
+{
+position:absolute;
+top:0;
+left:0;
+width:32px;
+height:32px;
+}
+
+.itemsList > .item > .details
+{
+margin-left:48px;
+}
+
+.itemsList > .item > .details > .detail
+{
+overflow:hidden;
+white-space:nowrap;
+text-overflow:ellipsis;
+color:#454B53;
+font-weight:bold;
+}
+
+.itemsList > .item > .details > .detail.title
+{
+margin-bottom:7px;
+color:#2969CB;
+font-weight:normal;
+line-height:16px;
+cursor:pointer;
+}
+
+.itemsList > .item > .details > .detail.location,
+.itemsList > .item > .details > .navigation
+{
+font-size:11px;
+}
+
+.itemsList > .item > .details > .detail > .label
+{
+font-weight:normal;
+}
+
+.itemsList > .item > .details > .navigation
+{
+margin:15px 0;
+}
+
+.itemsList > .item > .details > .navigation > .link
+{
+color:#878787;
+cursor:pointer;
+margin-right:15px;
+}
+
+.itemsList > .item > .details > .navigation > .link:hover
+{
+color:#2969CB;
+}
+

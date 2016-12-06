@@ -1,0 +1,171 @@
+.fielddesigner hr
+{
+border-color:#a1a9b2;
+border-style:solid;
+border-width:1px 0 0 0;
+margin:15px 0 10px 0;
+}
+
+.fielddesigner .dropdown,
+.fielddesigner select
+{
+border-color:#b8c1cc;
+}
+
+.fielddesigner select
+{
+border-style:solid;
+border-width:1px;
+}
+
+.fielddesigner .fieldwrapper
+{
+position:relative;
+min-height:30px;
+padding-left:150px;
+}
+
+.fielddesigner .fieldwrapper > label
+{
+position:absolute;
+left:10px;
+}
+
+.fielddesigner .fieldwrapper > label .asterisk
+{
+position:absolute;
+left:-10px;
+color:red;
+font-weight:bold;
+}
+
+.fielddesigner .fieldwrapper input,
+.fielddesigner select,
+.fielddesigner .dropdown
+{
+width:100%;
+}
+
+.fielddesigner .fieldwrapper .size
+{
+width:auto;
+}
+
+.fielddesigner .fieldwrapper .RowsLabel
+{
+position:static;
+}
+
+.fielddesigner .ValueListWrapper
+{
+position:relative;
+padding-right:150px;
+padding-bottom:30px;
+margin:10px 0;
+}
+
+.fielddesigner .ValueListWrapper .BtnMoveUp
+{
+position:absolute;
+top:0;
+right:20px;
+}
+
+.fielddesigner .ValueListWrapper .BtnMoveDown
+{
+position:absolute;
+top:30px;
+right:20px;
+}
+
+.fielddesigner .ValueListWrapper .BtnEdit
+{
+position:absolute;
+bottom:30px;
+right:20px;
+}
+
+.fielddesigner .ValueListWrapper .BtnAdd
+{
+position:absolute;
+bottom:0;
+left:0;
+}
+
+.fielddesigner .ValueListWrapper .BtnRemove
+{
+position:absolute;
+bottom:0;
+left:120px;
+}
+
+.fielddesigner .CategoryDropdownWrapper
+{
+height:20px;
+margin:10px 0;
+}
+
+.itemselect
+{
+position:relative;
+}
+
+.CustomUrlControl > div
+{
+margin-right:54px;
+border:1px solid #b8c1cc;
+padding:0 3px;
+background-color:white;
+}
+
+.CustomUrlControl > div > input
+{
+border-width:0;
+padding:2px 0;
+height:15px;
+line-height:15px;
+}
+
+.CustomUrlControl .buttons
+{
+position:absolute;
+top:0;
+right:0;
+}
+
+.CustomUrlControl .button
+{
+margin-left:5px;
+}
+
+.CustomUrlControl .button.insert .image
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-repeat:no-repeat;
+background-position:0 -16px;
+}
+
+.CustomUrlControl .button.clear .image
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-repeat:no-repeat;
+background-position:0 -32px;
+}
+
+.fielddesigner .RichTextWrapper
+{
+position:relative;
+height:90px;
+margin-top:20px;
+}
+
+.fielddesigner .RichTextWrapper .button
+{
+position:absolute;
+}
+
+.fielddesigner .DefaultTextareaValue
+{
+width:100%;
+}
+

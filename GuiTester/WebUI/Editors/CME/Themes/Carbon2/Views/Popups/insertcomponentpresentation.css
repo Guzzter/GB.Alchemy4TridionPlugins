@@ -1,0 +1,94 @@
+#InsertComponentPresentation #LayoutWrapper #Content
+{
+border-width:1px 1px 1px 1px;
+border-color:#8A9199;
+border-style:solid;
+}
+
+#InsertComponentPresentation .taskbar
+{
+border:none;
+}
+
+#InsertComponentPresentation #TreePanel
+{
+width:200px;
+}
+
+#InsertComponentPresentation #TreePage
+{
+border-style:solid;
+border-width:0 1px;
+border-color:#8A9199;
+width:auto;
+}
+
+#InsertComponentPresentation #ComponentsFooter .button,
+#InsertComponentPresentation #ComponentsContent .button
+{
+margin:5px;
+}
+
+#InsertComponentPresentation #ComponentsFooter .button > span,
+#InsertComponentPresentation #ComponentsContent .button > span
+{
+margin-left:5px;
+}
+
+#InsertComponentPresentation #InsertButton.button > span,
+#InsertComponentPresentation #CloseButton.button > span
+{
+padding:0;
+}
+
+#InsertComponentPresentation #PreviewButton.button
+{
+float:right;
+margin:0 5px;
+}
+
+#InsertComponentPresentation #ComponentPreviewFrame
+{
+width:100%;
+height:100%;
+}
+
+#InsertComponentPresentation #TreePage_switch div
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-position:0 -180px;
+}
+
+#InsertComponentPresentation #TreePage_menuswitch span
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-position:0 -180px;
+}
+
+#InsertComponentPresentation #FilteredDashboardList
+{
+overflow:hidden;
+height:100%;
+}
+
+.taskbar .location .image
+{
+margin-top:1px;
+margin-bottom:-19px;
+height:22px;
+background:url(data:image/svg+xml;
+base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y4ZjhmOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZGVkZWQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	filter:none;
+background:linear-gradient(to bottom, #F8F8F8 0%, #EDEDED 100%) repeat scroll 0 0 transparent;
+border-color:#FFFFFF;
+border-width:1px;
+}
+
+.taskbar .location .text
+{
+color:#222E39;
+text-transform:uppercase;
+margin-left:4px;
+padding-top:1px;
+}
+

@@ -1,0 +1,24 @@
+#PublicationFilter .panel > .head
+{
+color:#41464c;
+}
+
+#PublicationFilter .group .header .toggle
+{
+width:18px;
+height:18px;
+background-repeat:no-repeat;
+}
+
+#PublicationFilter .group .header .toggle.plus
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.18px.png);
+background-position:0 -0px;
+}
+
+#PublicationFilter .group .header .toggle.minus
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.18px.png);
+background-position:0 -18px;
+}
+

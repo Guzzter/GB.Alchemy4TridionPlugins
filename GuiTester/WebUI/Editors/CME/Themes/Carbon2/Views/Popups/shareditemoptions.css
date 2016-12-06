@@ -1,0 +1,9 @@
+#SharedItemOptionsPopup #questionRow .question-image
+{
+height:32px;
+width:32px;
+background-image:url({ThemePath[CME]}Images/Icons/mc.confirmation.32x32.png);
+background-repeat:no-repeat;
+background-position:0 top;
+}
+

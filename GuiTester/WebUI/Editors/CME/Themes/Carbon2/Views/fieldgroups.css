@@ -1,0 +1,10 @@
+﻿.itemview .form.fieldgroup
+{
+	background: Transparent none repeat scroll 0 0;
+	border: 2px solid #CCCCCC;
+}
+fieldset
+{
+	padding: 5px;
+	border: none;
+}

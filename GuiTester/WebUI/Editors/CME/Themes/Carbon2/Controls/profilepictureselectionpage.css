@@ -1,0 +1,8 @@
+#ProfilePictureErrorPage .section #errorIcon
+{
+width:48px;
+height:48px;
+background-image:url({ThemePath}/Sprites/cme_Sprites.48px.png);
+background-position:0 -0px;
+}
+

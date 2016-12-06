@@ -1,0 +1,10 @@
+#ForceFinishProcessPopup #icon
+{
+width:48px;
+height:48px;
+background-image:url({ThemePath}/Sprites/cme_Sprites.48px.png);
+top:15px;
+left:10px;
+background-position:0 -48px;
+}
+

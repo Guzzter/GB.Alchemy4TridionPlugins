@@ -8,7 +8,7 @@
     {
         public PluginContextMenuExtension()
         {
-            this.AssignId = "";
+            this.AssignId = PluginConstants.Name;
 
             // Use this property to specify where in the context menu your items will go
             this.InsertBefore = Constants.ContextMenuIds.MainContextMenu.SendItemLink;

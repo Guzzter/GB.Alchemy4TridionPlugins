@@ -1,0 +1,17 @@
+#BundleTab .gotoparentbutton span
+{
+	background-image: url({ThemePath[Base]}Images/Icons/browse-folders.16x16.png);
+	background-repeat: no-repeat;
+	background-position: 2px center;
+	padding: 0;
+	margin: 0;
+}
+
+#BundleTab .editbutton span
+{
+	background-image: url({ThemePath[CME]}Images/Icons/edit.16x16.png);
+	background-repeat: no-repeat;
+	background-position: 2px center;
+	padding: 0;
+	margin: 0;
+}

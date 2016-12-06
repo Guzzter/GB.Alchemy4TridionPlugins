@@ -1,0 +1,227 @@
+html.featurePage,
+.featurePage body
+{
+height:100%;
+overflow:hidden;
+font-family:Arial;
+}
+
+#pageWrapper
+{
+height:100%;
+overflow:hidden;
+background:#FFFFFF;
+}
+
+#page
+{
+position:relative;
+margin:0 auto;
+/* to center this block */
+height:100%;
+width:100%;
+overflow:hidden;
+}
+
+#header
+{
+height:57px;
+box-sizing:border-box;
+background-color:#ededed;
+border-style:solid;
+border-color:#aaa;
+border-width:1px 0;
+}
+
+#header h1.page-title
+{
+position:absolute;
+left:20px;
+line-height:57px;
+color:#296acc;
+font-size:23px;
+font-weight:normal;
+text-shadow:0 1px #fff;
+}
+
+#header .button-bar
+{
+position:absolute;
+right:20px;
+top:28px;
+transform:translate(0, -50%);
+-webkit-transform:translate(0, -50%);
+}
+
+#header .button-bar .listViewRenderSwitch,
+#header .button-bar .sdl-search
+{
+display:inline-block;
+}
+
+#header .button-bar button,
+#header .button-bar .sdl-search
+{
+margin-left:5px;
+margin-right:5px;
+}
+
+#header .button-bar .button-separator
+{
+vertical-align:middle;
+height:27px;
+display:inline-block;
+border-left:1px solid #FFF;
+border-right:1px solid #DDD;
+margin-left:5px;
+margin-right:5px;
+}
+
+#header .button
+{
+margin-left:10px;
+margin-right:10px;
+}
+
+.refreshIconLight
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-position:0 -276px;
+}
+
+.refreshIconDark
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-position:0 -292px;
+}
+
+#content
+{
+height:calc(100% - 57px);
+}
+
+#content > div.tile-view
+{
+padding-right:30px;
+}
+
+#content .hidden
+{
+display:none;
+}
+
+.tile
+{
+display:inline-block;
+margin:30px 0 0 30px;
+height:0;
+width:calc(10% - 30px);
+padding-bottom:calc((10% - 30px) * 0.625 + 58px);
+}
+
+.tile:last-child
+{
+margin-bottom:30px;
+vertical-align:top;
+}
+
+@media only screen and (max-width: 3010px)
+{
+.tile
+{
+width:calc(11.1% - 30px);
+padding-bottom:calc((11.1% - 30px) * 0.625 + 58px);
+}
+
+}
+
+@media only screen and (max-width: 2712px)
+{
+.tile
+{
+width:calc(12.5% - 30px);
+padding-bottom:calc((12.5% - 30px) * 0.625 + 58px);
+}
+
+}
+
+@media only screen and (max-width: 2414px)
+{
+.tile
+{
+width:calc(14.286% - 30px);
+padding-bottom:calc((14.286% - 30px) * 0.625 + 58px);
+}
+
+}
+
+@media only screen and (max-width: 2116px)
+{
+.tile
+{
+width:calc(16.6% - 30px);
+padding-bottom:calc((16.6% - 30px) * 0.625 + 58px);
+}
+
+}
+
+@media only screen and (max-width: 1818px)
+{
+.tile
+{
+width:calc(20% - 30px);
+padding-bottom:calc((20% - 30px) * 0.625 + 58px);
+}
+
+}
+
+@media only screen and (max-width: 1520px)
+{
+.tile
+{
+width:calc(25% - 30px);
+padding-bottom:calc((25% - 30px) * 0.625 + 58px);
+}
+
+}
+
+@media only screen and (max-width: 1222px)
+{
+.tile
+{
+width:calc(33.3% - 30px);
+padding-bottom:calc((33.3% - 30px) * 0.625 + 58px);
+}
+
+}
+
+@media only screen and (max-width: 924px)
+{
+.tile
+{
+width:calc(50% - 30px);
+padding-bottom:calc((50% - 30px) * 0.625 + 58px);
+}
+
+}
+
+@media only screen and (max-width: 626px)
+{
+.tile
+{
+width:calc(100% - 30px);
+padding-bottom:calc((100% - 30px) * 0.625 + 58px);
+}
+
+}
+
+@media only screen and (max-width: 328px)
+{
+.tile
+{
+width:268px;
+height:168px;
+}
+
+}
+

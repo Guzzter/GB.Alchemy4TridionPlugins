@@ -1,0 +1,8 @@
+.overlay .loadingMessage .loadingImage
+{
+margin:0 auto 20px auto;
+height:60px;
+width:60px;
+background-image:url({ThemePath[Base]}Images/Controls/LoadingIndicator/loading-indicator.60x60.gif);
+}
+

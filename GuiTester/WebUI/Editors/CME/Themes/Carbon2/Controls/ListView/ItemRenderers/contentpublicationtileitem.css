@@ -1,0 +1,6 @@
+.content-publication.tile > .image-wrapper > .image
+{
+background-image:url({ThemePath[CME]}Images/Views/SiteWizard/publication.64.color.png);
+background-position:center;
+}
+

@@ -1,0 +1,6 @@
+.site-type.tile > .image-wrapper > .image
+{
+background-image:url({ThemePath[CME]}Images/Views/SiteWizard/site-type.64.color.png);
+background-position:center;
+}
+

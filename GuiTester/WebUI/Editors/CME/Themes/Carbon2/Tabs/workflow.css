@@ -1,0 +1,10 @@
+#ItemWorkflow .panel > .head > .icon
+{
+background-image:url({ThemePath[Base]}Images/Controls/Panel/minimize_group.png);
+}
+
+#ItemWorkflow .panel.closed > .head > .icon
+{
+background-image:url({ThemePath[Base]}Images/Controls/Panel/expand_group.png);
+}
+

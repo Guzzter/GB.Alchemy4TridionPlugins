@@ -1,0 +1,18 @@
+#KeywordView #RelatedKeywordsBlock
+{
+	height: 142px;
+}
+#KeywordView #RelatedKeywordsBlock #KeywordList
+{
+	height: 140px;
+	right: 130px;
+	border: 1px solid #b8c1cc;
+}
+#KeywordView .itemview .list
+{
+    border: none;
+}
+#KeywordView #ParentKeywordsBlock
+{
+	border: 1px solid #b8c1cc;
+}

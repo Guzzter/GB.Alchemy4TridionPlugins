@@ -1,0 +1,58 @@
+.site-type.row > .image-wrapper > .image
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.32px.png);
+background-position:0 -0px;
+}
+
+.site-type.row > .details,
+.site-type.row > .environments,
+.site-type.row > .business-process-type
+{
+display:inline-block;
+vertical-align:top;
+min-width:150px;
+margin-left:5px;
+width:calc(32% - 22px);
+}
+
+.site-type.row > .details
+{
+margin-top:2px;
+}
+
+.site-type.row > .environments,
+.site-type.row > .business-process-type
+{
+margin-top:6px;
+line-height:24px;
+overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap;
+}
+
+.site-type.row > .environments .value,
+.site-type.row > .environments .label,
+.site-type.row > .business-process-type .value,
+.site-type.row > .business-process-type .label
+{
+overflow:hidden;
+text-overflow:ellipsis;
+}
+
+.row .label
+{
+color:#878787;
+line-height:20px;
+}
+
+.row.selected .label
+{
+color:#262C39;
+}
+
+.row > .environments .value > .environment
+{
+font-size:12px;
+color:#262C39;
+}
+

@@ -1,0 +1,11 @@
+#findBtn .image
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-position:0 -308px;
+}
+
+ul.linkList
+{
+list-style-image:url({ThemePath[CME]}Images/Base/link.arrow-right.png);
+}
+

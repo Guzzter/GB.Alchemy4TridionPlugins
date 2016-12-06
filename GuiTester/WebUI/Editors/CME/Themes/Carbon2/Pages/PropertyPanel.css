@@ -1,0 +1,49 @@
+﻿.propertyPanel
+{
+}
+
+.propertyPanel .panelTitle
+{
+	margin: 0;
+	padding: 0 7px;
+	height: 30px;
+	line-height: 30px;
+	color: #2969CB;
+	font-size: 14px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.propertyPanel .top 
+{
+	height: 35px;
+	overflow: hidden;
+} 
+
+.propertyPanel .sectionTitle
+{
+	color: #3F464C;
+	font-size: 12px;
+	padding: 0 10px;
+	float: left;
+}
+
+.PropertiesBlock .sectionTitle
+{
+	margin-top: .83em;
+}
+
+.propertyPanel .showMore
+{
+	float:right;
+	color: #2969CB;
+	cursor: pointer;
+	padding: 10px 10px;
+}
+
+.propertyPanel .namevaluepairtable
+{
+	table-layout: fixed;
+	width: 100%;
+	margin: 0 0 10px;
+}

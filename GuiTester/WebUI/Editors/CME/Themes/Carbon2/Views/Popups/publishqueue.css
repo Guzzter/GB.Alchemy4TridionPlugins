@@ -1,0 +1,38 @@
+#PublishQueueView body
+{
+	background: #fafafa;
+	color: #41464c;
+}
+
+#PublishQueueView #StackElement
+{
+	height: 100%;
+}
+
+#PublishQueueView #andTextLabel.disabled
+{
+	color: #aaaaaa;
+}
+
+#PublishQueueView #list_container
+{
+	background-color: #fff;
+}
+
+#PublishQueueView .listlabel
+{
+	color: #ffffff;
+	padding: 4px 0 0 5px;
+}
+
+#PublishQueueView #footer
+{
+	position: relative;
+}
+
+#PublishQueueView #BtnClose
+{
+	position: absolute;
+	top: 9px;
+	right: 10px;
+}

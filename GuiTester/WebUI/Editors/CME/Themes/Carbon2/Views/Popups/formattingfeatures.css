@@ -1,0 +1,107 @@
+#FormattingFeaturesPopup
+{
+    min-width: 400px;
+}
+#FormattingFeaturesPopup #TabControl
+{
+    padding: 0;
+}
+#FormattingFeaturesPopup #TabControl > .body
+{
+    border-width: 1px 0 0 0;
+    min-height: 1px;
+}
+#FormattingFeaturesPopup #TabControl > .body > .page
+{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#FormattingFeaturesPopup .listwrapper
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 180px;
+    height: 100%;
+}
+#FormattingFeaturesPopup .listwrapper ul
+{
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: solid 1px #b0b0b0;
+    background-color: #ffffff;
+    overflow: auto;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 5px;
+}
+#FormattingFeaturesPopup #AllowedActionsTab .listwrapper ul li img
+{
+    position: relative;
+    top: 1px;
+}
+#FormattingFeaturesPopup #AllowedActionsTab .listwrapper ul li input
+{
+    margin: 3px 15px 3px 4px;
+}
+#FormattingFeaturesPopup #AllowedActionsTab .listwrapper ul li input.noimage
+{
+    margin-top: 8px;
+    margin-right: 36px;
+}
+#FormattingFeaturesPopup #AllowedActionsTab .listwrapper ul li.child input
+{
+    margin-left: 10px;
+}
+#FormattingFeaturesPopup #AllowedActionsTab .listwrapper ul li label
+{
+    position: relative;
+    top: -3px;
+    padding-left: 15px;
+}
+#FormattingFeaturesPopup #AllowedActionsTab .listwrapper ul li.child label
+{
+    padding-left: 9px;
+}
+#FormattingFeaturesPopup #AllowedStylesTab .listwrapper ul li input
+{
+    margin: 8px 20px 3px 4px;
+}
+#FormattingFeaturesPopup #AllowedStylesTab .listwrapper ul li label
+{
+    position: relative;
+    top: -3px;
+}
+#FormattingFeaturesPopup #FilteringXsltTab textarea
+{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border-width: 0;
+    margin: 0;
+    overflow: auto;
+    resize: none;
+}
+
+#FormattingFeaturesPopup #TabControl .btnwrapper
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 180px;
+    padding-top: 20px;
+}
+#FormattingFeaturesPopup #TabControl .btnwrapper .button
+{
+    margin: 0 0 10px 20px;
+}
+#FormattingFeaturesPopup .BtnWrapper
+{
+	margin-left: auto;
+	margin-right: 10px;
+	margin-top: 10px;
+}

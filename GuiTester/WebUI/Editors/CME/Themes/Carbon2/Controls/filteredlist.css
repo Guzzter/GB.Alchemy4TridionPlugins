@@ -1,0 +1,24 @@
+#filteredlist_splitter #list_container
+{
+border-top:1px solid #8A9199;
+}
+
+#filteredlist_splitter #list_container .list
+{
+border-width:0;
+border-style:none;
+}
+
+#filteredlist_splitter #views_container
+{
+min-height:24px;
+}
+
+#filteredlist_splitter #views_container .loading
+{
+height:100%;
+background-image:url({ThemePath[CME]}images/base/list-loading.gif);
+background-position:5px 4px;
+background-repeat:no-repeat;
+}
+

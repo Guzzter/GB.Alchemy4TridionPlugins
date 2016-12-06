@@ -1,0 +1,53 @@
+.flisttopbar
+{
+color:#222E39;
+}
+
+.flisttopbar .location .label
+{
+float:left;
+font-weight:bold;
+margin-right:5px;
+margin-top:1px;
+}
+
+.flisttopbar .location .button.refresh
+{
+width:14px;
+min-width:14px;
+height:12px;
+min-height:12px;
+background-repeat:no-repeat;
+background-image:url({ThemePath}/Sprites/cme_Sprites.14px.png);
+background-position:0 -0px;
+}
+
+.flisttopbar .location .button.refresh.mouseover
+{
+background-repeat:no-repeat;
+background-image:url({ThemePath}/Sprites/cme_Sprites.14px.png);
+background-position:0 -12px;
+}
+
+.flisttopbar .views .button
+{
+min-width:13px;
+width:13px;
+min-height:13px;
+height:13px;
+}
+
+.flisttopbar .views .button.details
+{
+background-repeat:no-repeat;
+background-image:url({ThemePath}/Sprites/cme_Sprites.13px.png);
+background-position:0 -0px;
+}
+
+.flisttopbar .views .button.thumbs
+{
+background-repeat:no-repeat;
+background-image:url({ThemePath}/Sprites/cme_Sprites.13px.png);
+background-position:0 -13px;
+}
+

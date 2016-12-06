@@ -1,0 +1,84 @@
+.messagebox ul.detailed
+{
+display:block;
+overflow:auto;
+list-style:none;
+max-height:300px;
+border:1px solid #A1A9B2;
+background-color:white;
+padding:0;
+}
+
+.messagebox ul.detailed li
+{
+display:block;
+margin:0;
+padding:0;
+}
+
+.messagebox ul.detailed li .item
+{
+position:relative;
+margin:0;
+border-color:#DDDDDD;
+border-width:0 0 1px 0;
+border-style:solid;
+min-height:16px;
+padding:10px 10px 10px 36px;
+}
+
+.messagebox ul.detailed > li:last-child > .item
+{
+border-bottom-width:0;
+}
+
+.messagebox ul.detailed.nesting > li:last-child > .item,
+.messagebox ul.detailed.nesting ul.detailed > li:last-child > .item
+{
+border-bottom-width:1px;
+}
+
+.messagebox ul.detailed.nesting > li:last-child > ul.detailed > li:last-child > .item
+{
+border-bottom-width:0;
+}
+
+.messagebox ul.detailed li .item .icon
+{
+position:absolute;
+top:10px;
+left:10px;
+width:16px;
+height:16px;
+}
+
+.messagebox ul.detailed li .item.error .icon
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-position:0 -148px;
+}
+
+.messagebox ul.detailed li .item.warning .icon
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-position:0 -164px;
+}
+
+.messagebox ul.detailed > li > .item > .title
+{
+overflow:hidden;
+text-overflow:ellipsis;
+}
+
+.messagebox ul.detailed.nesting > li > .item
+{
+background-color:#F3F3F3;
+}
+
+.messagebox ul.detailed.nesting ul.detailed
+{
+border-width:0;
+overflow:hidden;
+max-height:none;
+}
+

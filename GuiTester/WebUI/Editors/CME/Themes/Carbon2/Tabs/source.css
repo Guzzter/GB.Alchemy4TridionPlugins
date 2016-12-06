@@ -1,0 +1,67 @@
+.tabcontrol > .body > .SourceTab
+{
+padding:0;
+}
+
+.SourceTab #SourceHeader
+{
+height:30px;
+line-height:30px;
+}
+
+.SourceTab #SourceHeader #SourceType
+{
+top:6px;
+left:50px;
+width:250px;
+height:16px;
+}
+
+.SourceTab #SourceFooter
+{
+height:40px;
+}
+
+.SourceTab #PreviewDropdown
+{
+top:3px;
+margin-left:10px;
+}
+
+.SourceTab #BrowseItem
+{
+width:22px;
+min-width:22px;
+margin-left:10px;
+}
+
+.SourceTab #BrowseItem > span
+{
+background-image:url({ThemePath[Base]}Images/Icons/browse-folders.16x16.png);
+background-repeat:no-repeat;
+background-position:3px 3px;
+}
+
+.SourceTab #PreviewBtn
+{
+width:100px;
+margin-left:10px;
+}
+
+.SourceTab #PreviewBtn > span
+{
+background-image:url({ThemePath[CME]}Images/Icons/preview.16x16.png);
+background-position:left center;
+background-repeat:no-repeat;
+margin-left:5px;
+padding-left:20px;
+}
+
+.SourceTab #SourceFooter #ValidateSource
+{
+top:15px;
+margin-right:5px;
+width:100px;
+text-align:center;
+}
+
