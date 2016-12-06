@@ -1,10 +1,8 @@
 <?xml version="1.0"?>
-<plugin xmlns:c="https://www.alchemywebstore.com/configuration/definitions" xmlns="http://www.alchemywebstore.com/">
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.alchemywebstore.com/">
   <id>55d32cf5e4de020da4123e64</id>
-  <name>Go_To_Owning_Publication</name>
   <description><![CDATA[Adds a context menu command to open a TCM item in it's owning publication.  Saves moving up and down the Blueprint structure.]]></description>
+  <name>Go_To_Owning_Publication</name>
   <version>1.2.0.0</version>
-  <references />
   <versionId>56f6abcbe4de02168c2c59cf</versionId>
-  <frameworkVersion>0.8.1.0</frameworkVersion>
 </plugin>

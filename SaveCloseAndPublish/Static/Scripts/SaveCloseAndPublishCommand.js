@@ -14,7 +14,6 @@ Alchemy.command("${PluginName}", "SaveCloseAndPublish", {
     isAvailable: function (selection, pipeline) {
         var type = $models.getItemType(selection.getItem(0));
         var isPage = (type === $const.ItemType.PAGE);
-        console.log(type);
 
         var saveCloseCmd = $commands.getCommand("SaveClose");
         var isSaveClosePossible = false;
@@ -44,8 +43,6 @@ Alchemy.command("${PluginName}", "SaveCloseAndPublish", {
 
         function publishAndClose(tcm) {
 
-            //console.log("publishAndClose = " + tcm);
-
             // This is the Promise pattern that the webapi proxy js exposes. Look at another example to
             // see how the callback method can also be used. Your WebAPI controller's route and route prefix
             // attributes controls how the namespace is generated.
@@ -74,42 +71,47 @@ Alchemy.command("${PluginName}", "SaveCloseAndPublish", {
                                 progress.finish();
                             });
                     } else {
-
-                        // Show publish dialog
-                        var params = {
-                            command: "publish",
-                            items: [tcm],
-                            republish: false,
-                            userWorkflow: false
-                        };
-                        var popup = $popupManager.createExternalContentPopup(Tridion.Web.UI.Editors.CME.Constants.Popups.PUBLISH.URL, Tridion.Web.UI.Editors.CME.Constants.Popups.PUBLISH.FEATURES, params);
-
-                        var handleCancel = function PopupManager$createDisposingExternalContentPopup$onPopupCanceled(event) {
-                            popup.close();
-                        };
-
-                        var handleClosed = function PopupManager$createDisposingExternalContentPopup$handleClosed(event) {
-
-                            //$popupManager.properties.popups = {};
-                            window.close();
-                        };
-
-                        // Maybe not all popups have a cancel event, but this makes it easier in case the popup does.
-                        $evt.addEventHandler(popup, "cancel", handleCancel);
-                        $evt.addEventHandler(popup, "closed", handleClosed);
-
-                        popup.open();
+                        showPublishDialog(tcm);
                     }
                 })
                 .error(function (error) {
                     console.error("Could not load settings for SaveCloseAndPublish");
+
+                    // fallback: always showPublishDialog
+                    showPublishDialog(tcm);
                 });
+        }
+
+        function showPublishDialog(tcm) {
+
+            // Show publish dialog
+            var params = {
+                command: "publish",
+                items: [tcm],
+                republish: false,
+                userWorkflow: false
+            };
+            var popup = $popupManager.createExternalContentPopup($config.expandEditorPath("/Views/Popups/Publish/Publish.aspx", $const.CMEEditorName), "width=750px,height=480px,resizable=1", params);
+
+            var handleCancel = function PopupManager$createDisposingExternalContentPopup$onPopupCanceled(event) {
+                popup.close();
+            };
+
+            var handleClosed = function PopupManager$createDisposingExternalContentPopup$handleClosed(event) {
+
+                //$popupManager.properties.popups = {};
+                window.close();
+            };
+
+            // Maybe not all popups have a cancel event, but this makes it easier in case the popup does.
+            $evt.addEventHandler(popup, "cancel", handleCancel);
+            $evt.addEventHandler(popup, "closed", handleClosed);
+
+            popup.open();
         }
 
         var item = $display.getItem();
         var isChanged = !item.isReadOnly() && item.getChanged() && !item.isLoading();
-
-        //console.log('isChanged = ' + isChanged);
 
         if (isChanged) {
             $evt.addEventHandler(item, "save", Save$execute$onSave);
