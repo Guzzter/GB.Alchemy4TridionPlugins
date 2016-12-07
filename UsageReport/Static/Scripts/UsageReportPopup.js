@@ -11,8 +11,9 @@
     // Alchemy comes with jQuery and several other libraries already pre-installed so assigning
     // it a variable here eliminates the redundancy of loading my own copy, and avoids any conflicts over
     // the $ character
-    $j = Alchemy.library("jQuery");
+    $j = Alchemy.library("JQuery");
 
+    //Alchemy.Resources.Libs.JQuery
     // Grabs the URL of the popup and gets the TCM of the item selected in Tridion from the querystring
     var url = location.href;
     var tcm = location.href.substring(url.indexOf("uri=tcm%3A") + 10, url.indexOf("&"));
@@ -289,6 +290,7 @@
                         pluginSettings = JSON.stringify(settings);
                     })
                     .error(function () {
+                        debugger;
                         console.log("There was an error", error.message);
                     })
                     .complete(function () {
@@ -299,6 +301,7 @@
         ** and disable all buttons since they are dependent on an item being selected to have a meaning
         **/
         function deselectItems() {
+            debugger;
             $j("#where_used_using").addClass("disabled");
             $j("#pages_where_used").addClass("disabled");
             $j("#open_item").addClass("disabled");
@@ -309,6 +312,7 @@
         ** Enables all buttons by removing the disabled class and adding an enabled class.
         **/
         function enableButtons() {
+            debugger;
             $j("#where_used_using").removeClass("disabled");
             $j("#where_used_using").addClass("enabled");
             $j("#pages_where_used").removeClass("disabled");

@@ -1,6 +1,7 @@
 ﻿namespace ExportUserList.Controllers
 {
     using System;
+    using System.Collections.Generic;
     using System.IO;
     using System.Linq;
     using System.Net;
@@ -78,8 +79,26 @@
         /// <returns></returns>
         private string BuildUserListAsCsv()
         {
+            List<string> columnHeaders = new List<string> { "Nr.", "Title", "Id", "Description", "Is enabled", "Is administrator" };
+            List<string> groupIds = new List<string>();
+
+            var groupsFilterData = new GroupsFilterData()
+            {
+                BaseColumns = ListBaseColumns.IdAndTitle,
+                IsPredefined = false,
+                ItemType = ItemType.Group
+            };
+
+            var list = this.Client.GetSystemWideListXml(groupsFilterData);
+            foreach (XElement item in list.Elements())
+            {
+                groupIds.Add(item.Attribute("ID")?.Value);
+                columnHeaders.Add(item.Attribute("Title")?.Value);
+            }
+
             StringBuilder sb = new StringBuilder();
-            this.AddCsvLine(sb, "Nr.", "Title", "Id", "Description", "Is enabled", "Is administrator");
+            this.AddCsvLine(sb, columnHeaders.ToArray());
+
             UsersFilterData usersFilterData = new UsersFilterData
             {
                 BaseColumns = ListBaseColumns.Id,
@@ -92,14 +111,25 @@
             foreach (XElement itemXml in this.Client.GetSystemWideListXml(usersFilterData).Elements())
             {
                 UserData user = (UserData)this.Client.Read(itemXml.Attribute("ID").Value, new ReadOptions());
-                this.AddCsvLine(
-                    sb,
-                    "" + rowCounter++,
-                    user.Title,
-                    user.Id,
-                    user.Description,
-                    (user.IsEnabled.HasValue ? user.IsEnabled.Value : false).ToString(),
-                    ((user.Privileges.HasValue ? user.Privileges.Value : 0) == 1).ToString());
+
+                // Start with adding the base columns
+                List<string> columnData = new List<string>
+                                          {
+                                              "" + rowCounter++,
+                                              user.Title,
+                                              user.Id,
+                                              user.Description,
+                                              (user.IsEnabled.HasValue ? user.IsEnabled.Value : false).ToString(),
+                                              ((user.Privileges.HasValue ? user.Privileges.Value : 0) == 1).ToString()
+                                          };
+
+                // Add user group membership flags
+                foreach (var groupId in groupIds)
+                {
+                    columnData.Add(user.GroupMemberships.FirstOrDefault(x => x.Group.IdRef == groupId) == null ? "false" : "true");
+                }
+
+                this.AddCsvLine(sb, columnData.ToArray());
             }
 
             return sb.ToString();
