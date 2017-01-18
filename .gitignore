@@ -194,3 +194,7 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+/Install-A4T-plugin-UsageReport.bat
+/Install-A4T-plugin-SaveCloseAndPublish.bat
+/Install-A4T-plugin-ExportUserList.bat
+/Install-A4T-plugin-AutoSizeNavBar.bat
