@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoToOwningPublication", "Go
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportUserList", "ExportUserList\ExportUserList.csproj", "{FD9D4EE8-9A5A-424B-A7F6-047900CE6AE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsageReport", "UsageReport\UsageReport.csproj", "{3EB758E8-074F-4DBB-AD91-CAE03FC7670B}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{7124E235-8B20-4A07-ADC9-27DA51187CE7}"
 	ProjectSection(SolutionItems) = preProject
 		Images\ExportUserList1.png = Images\ExportUserList1.png
@@ -31,6 +29,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveCloseAndPublish", "Save
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiTester", "GuiTester\GuiTester.csproj", "{08B273D8-8066-4F9C-A7AB-B60CD9A26DD6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other", "Other", "{8711BE0A-E089-49C1-B383-797C62E5BBAB}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,10 +49,6 @@ Global
 		{FD9D4EE8-9A5A-424B-A7F6-047900CE6AE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD9D4EE8-9A5A-424B-A7F6-047900CE6AE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD9D4EE8-9A5A-424B-A7F6-047900CE6AE1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3EB758E8-074F-4DBB-AD91-CAE03FC7670B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3EB758E8-074F-4DBB-AD91-CAE03FC7670B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3EB758E8-074F-4DBB-AD91-CAE03FC7670B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3EB758E8-074F-4DBB-AD91-CAE03FC7670B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CA853C4B-E4A9-4836-BA20-605B5071E311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CA853C4B-E4A9-4836-BA20-605B5071E311}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA853C4B-E4A9-4836-BA20-605B5071E311}.Release|Any CPU.ActiveCfg = Release|Any CPU
