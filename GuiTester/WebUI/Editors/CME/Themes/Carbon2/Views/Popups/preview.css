@@ -1,0 +1,83 @@
+#PreviewPopup body
+{
+background:#ebedf0;
+color:#41464c;
+}
+
+#PreviewPopup #StackElement1
+{
+height:100%;
+}
+
+#PreviewPopup #ShowTargetGroupsBtn
+{
+background-repeat:no-repeat;
+background-position:left;
+position:relative;
+border:none 0;
+}
+
+#PreviewPopup #ShowTargetGroupsBtn.button .text
+{
+padding:0 5px 0 25px;
+color:#262C39;
+text-shadow:none;
+}
+
+#PreviewPopup #ShowTargetGroupsBtn.expand
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.19px.png);
+background-position:0 -0px;
+}
+
+#PreviewPopup #ShowTargetGroupsBtn.collapse
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.19px.png);
+background-position:0 -19px;
+}
+
+#PreviewPopup .panel1
+{
+position:relative;
+}
+
+#PreviewPopup .panel2
+{
+border-width:0 1px 0 1px;
+border-style:solid;
+border-color:#a1a9b2;
+}
+
+#PreviewPopup #BrowseItem
+{
+width:22px;
+min-width:22px;
+margin-left:10px;
+}
+
+#PreviewPopup #BrowseItem > .text
+{
+background-image:url({ThemePath[Base]}Images/Icons/browse-folders.16x16.png);
+background-repeat:no-repeat;
+background-position:3px 3px;
+}
+
+#PreviewPopup .panel1 #TargetGroupList
+{
+border:solid 1px #a1a9b2;
+background-color:#fff;
+}
+
+#PreviewPopup #SourceArea
+{
+border-style:none;
+}
+
+#PreviewPopup #PreviewFrame
+{
+border-width:1px 0 1px 0;
+border-style:solid;
+border-color:#a1a9b2;
+background-color:#fff;
+}
+

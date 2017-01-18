@@ -1,0 +1,30 @@
+.block a
+{
+color:#2972cc;
+}
+
+.editorDocumentation .image,
+#AdministratorsTopicsBtn .image
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.32px.png);
+background-position:0 -96px;
+}
+
+#SDLCommunityBtn .image
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.32px.png);
+background-position:0 -128px;
+}
+
+#SDLUpdatesBtn .image
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.32px.png);
+background-position:0 -160px;
+}
+
+#sdlwebtrainingschedule .button > .image
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.32px.png);
+background-position:0 -192px;
+}
+

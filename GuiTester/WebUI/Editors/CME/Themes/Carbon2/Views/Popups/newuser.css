@@ -1,0 +1,38 @@
+#NewUserPopup #LeftPanel
+{
+	border-right: solid 1px #a1a9b2;
+}
+#NewUserPopup #LeftTopPanel
+{
+	padding: 20px;
+	border-bottom: solid 1px #a1a9b2;
+	background-color: #e2e9f1;
+}
+#NewUserPopup #LeftBottomPanel .wizardstep.selected
+{
+	color: #2585c9;
+	font-weight: bold;
+}
+#NewUserPopup #DeckElement
+{
+	border-width: 0;
+}
+#NewUserPopup #DeckElement > .body
+{
+	background-color: #ebedf0;
+}
+#NewUserPopup .datalabel
+{
+	color: #2585c9;
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+#NewUserPopup #PageStep1 #UsersFound,
+#NewUserPopup #PageStep1 #SelectedUsers1,
+#NewUserPopup #PageStep2 #SelectedUsers2,
+#NewUserPopup #PageStep3 #SelectedUsers3,
+#NewUserPopup #PageStep3 #GroupsForUsers,
+#NewUserPopup #PageStep3 #MembershipScopeForGroup
+{
+	border: solid 1px #a1a9b2;
+}

@@ -1,0 +1,97 @@
+#MetadataDesignTab
+{
+padding:0;
+}
+
+.MetadataDesignTab .PanelContainer
+{
+position:absolute;
+top:10px;
+left:10px;
+right:10px;
+bottom:10px;
+}
+
+.MetadataDesignTab #MetadataDesignFields
+{
+height:250px;
+}
+
+.MetadataDesignTab .panel > .head
+{
+height:14px;
+background-color:#e1e3e5;
+border-color:#a1a9b2;
+padding-left:10px;
+}
+
+.MetadataDesignTab .panel > .head > .icon
+{
+background-image:url({ThemePath[Base]}Images/Controls/Panel/minimize_group.png);
+}
+
+.MetadataDesignTab .panel.closed > .head > .icon
+{
+background-image:url({ThemePath[Base]}Images/Controls/Panel/expand_group.png);
+}
+
+.MetadataDesignTab .panel > .body
+{
+border-style:none;
+padding:15px 30px;
+min-height:0;
+}
+
+.MetadataDesignTab #MetadataDesignPanelContentWrapper
+{
+position:relative;
+height:100%;
+}
+
+.MetadataDesignTab #MetadataDesignPanelContentWrapper #MetadataDesignBtnRemoveField
+{
+margin-left:10px;
+}
+
+.MetadataDesignTab #MetadataDesignPanelContentWrapper #MetadataDesignBtnMoveFieldUp
+{
+position:absolute;
+top:0;
+}
+
+.MetadataDesignTab #MetadataDesignPanelContentWrapper #MetadataDesignBtnMoveFieldDown
+{
+position:absolute;
+top:30px;
+}
+
+.MetadataDesignTab #MetadataDesignListButtonWrapper
+{
+position:absolute;
+bottom:0;
+height:25px;
+}
+
+.MetadataDesignTab #MetadataDesignMoveUpDownButtonWrapper
+{
+position:absolute;
+top:0;
+right:0;
+bottom:0;
+width:135px;
+}
+
+.MetadataDesignTab #MetadataDesignFieldsList
+{
+position:absolute;
+top:0;
+right:150px;
+bottom:40px;
+left:0;
+}
+
+.MetadataDesignTab #MetadataDesignFieldDetails
+{
+margin:10px 0 0 0;
+}
+

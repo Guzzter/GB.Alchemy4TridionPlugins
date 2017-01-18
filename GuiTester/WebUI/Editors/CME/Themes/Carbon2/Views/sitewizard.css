@@ -1,0 +1,80 @@
+.sdl-wizard-slide-header
+{
+height:47px;
+background-color:#FAFAFA;
+border-bottom:1px solid #AAAAAA;
+}
+
+.sdl-wizard-slide-header h1
+{
+font-family:Arial;
+font-weight:bold;
+font-size:15px;
+color:#262C39;
+padding-top:14px;
+padding-left:10px;
+margin-bottom:17px;
+text-overflow:ellipsis;
+white-space:nowrap;
+overflow:hidden;
+}
+
+.sdl-wizard-slide-content
+{
+position:absolute;
+top:48px;
+bottom:0;
+left:0;
+right:0;
+padding:20px;
+overflow-y:auto;
+}
+
+.button-bar
+{
+margin-right:10px;
+padding-top:10px;
+float:right;
+}
+
+.button-bar .sdl-tridion-control-listviewrenderswitch,
+.button-bar .sdl-search
+{
+display:inline-block;
+}
+
+.button-bar button,
+.button-bar .sdl-search
+{
+margin-left:5px;
+margin-right:5px;
+}
+
+.button-bar button:last-child
+{
+margin-right:0px;
+}
+
+.button-bar .button-separator
+{
+vertical-align:middle;
+height:27px;
+display:inline-block;
+border-left:1px solid #FFF;
+border-right:1px solid #DDD;
+margin-left:5px;
+margin-right:5px;
+}
+
+.refresh-button .refreshIconLight
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-position:0 -276px;
+}
+
+.refresh-button .refreshIconDark
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-position:0 -292px;
+}
+

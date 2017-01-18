@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoToOwningPublication", "GoToOwningPub\GoToOwningPublication.csproj", "{8851DB44-1360-4C50-83CE-8F5940DB6589}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportUserList", "ExportUserList\ExportUserList.csproj", "{FD9D4EE8-9A5A-424B-A7F6-047900CE6AE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{7124E235-8B20-4A07-ADC9-27DA51187CE7}"
+	ProjectSection(SolutionItems) = preProject
+		Images\ExportUserList1.png = Images\ExportUserList1.png
+		Images\ExportUserList2.png = Images\ExportUserList2.png
+		Images\GoToOwningPublication1.png = Images\GoToOwningPublication1.png
+		Images\GoToOwningPublication2.png = Images\GoToOwningPublication2.png
+		Images\UserList.png = Images\UserList.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{8C65B1F0-0A4F-430F-871B-20B6832A38D5}"
+	ProjectSection(SolutionItems) = preProject
+		Install-A4T-plugin-ExportUserList.bat = Install-A4T-plugin-ExportUserList.bat
+		Install-A4T-plugin-SaveCloseAndPublish.bat = Install-A4T-plugin-SaveCloseAndPublish.bat
+		Install-A4T-plugin-UsageReport.bat = Install-A4T-plugin-UsageReport.bat
+		Install-A4T-plugin.cmd = Install-A4T-plugin.cmd
+		Install-A4T-Plugin.ps1 = Install-A4T-Plugin.ps1
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveCloseAndPublish", "SaveCloseAndPublish\SaveCloseAndPublish.csproj", "{CA853C4B-E4A9-4836-BA20-605B5071E311}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiTester", "GuiTester\GuiTester.csproj", "{08B273D8-8066-4F9C-A7AB-B60CD9A26DD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other", "Other", "{8711BE0A-E089-49C1-B383-797C62E5BBAB}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8851DB44-1360-4C50-83CE-8F5940DB6589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8851DB44-1360-4C50-83CE-8F5940DB6589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8851DB44-1360-4C50-83CE-8F5940DB6589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8851DB44-1360-4C50-83CE-8F5940DB6589}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD9D4EE8-9A5A-424B-A7F6-047900CE6AE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD9D4EE8-9A5A-424B-A7F6-047900CE6AE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD9D4EE8-9A5A-424B-A7F6-047900CE6AE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD9D4EE8-9A5A-424B-A7F6-047900CE6AE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA853C4B-E4A9-4836-BA20-605B5071E311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA853C4B-E4A9-4836-BA20-605B5071E311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA853C4B-E4A9-4836-BA20-605B5071E311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA853C4B-E4A9-4836-BA20-605B5071E311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08B273D8-8066-4F9C-A7AB-B60CD9A26DD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08B273D8-8066-4F9C-A7AB-B60CD9A26DD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08B273D8-8066-4F9C-A7AB-B60CD9A26DD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08B273D8-8066-4F9C-A7AB-B60CD9A26DD6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

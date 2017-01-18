@@ -1,0 +1,16 @@
+#PastePopup .message
+{
+background-image:url({ThemePath[CME]}Images/Icons/mc.warning.32x32.png);
+background-position:left top;
+background-repeat:no-repeat;
+overflow:auto;
+overflow-x:hidden;
+overflow-y:auto;
+padding-left:42px;
+}
+
+#PastePopup .apply
+{
+float:left;
+}
+

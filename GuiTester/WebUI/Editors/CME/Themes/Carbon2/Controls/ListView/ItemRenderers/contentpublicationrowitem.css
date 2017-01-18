@@ -1,0 +1,19 @@
+.content-publication.row > .image-wrapper > .image
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.32px.png);
+background-position:0 -32px;
+}
+
+.content-publication.row > .details
+{
+display:inline-block;
+vertical-align:top;
+margin-left:5px;
+width:calc(100% - 89px);
+}
+
+.content-publication.row > .details > .title
+{
+padding-top:17px;
+}
+

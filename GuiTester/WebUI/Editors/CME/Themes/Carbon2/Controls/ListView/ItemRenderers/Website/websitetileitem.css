@@ -1,0 +1,101 @@
+.tile
+{
+position:relative;
+border:1px solid #DDDDDD;
+background-color:#fff;
+border-radius:3px;
+box-sizing:border-box;
+}
+
+.tile > .image
+{
+display:block;
+margin:auto;
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:58px;
+background-repeat:no-repeat;
+background-position:center;
+background-image:url({ThemePath[CME]}Images/Views/Sites/sites.64.color.png);
+}
+
+.tile .footer
+{
+position:absolute;
+left:0;
+right:0;
+bottom:0;
+height:54px;
+background-color:#fff;
+border-width:0 0 4px 0;
+border-style:solid;
+border-color:#f3f3f3;
+}
+
+.tile .details,
+.tile .details > *
+{
+display:block;
+}
+
+.tile .details
+{
+border-top:1px solid #DDDDDD;
+height:53px;
+}
+
+.tile .details > *
+{
+margin:0 10px;
+overflow:hidden;
+text-overflow:ellipsis;
+}
+
+.tile .details > .target-types-button
+{
+position:absolute;
+top:16px;
+right:0px;
+}
+
+.tile .details > .title
+{
+font-weight:bold;
+font-size:12px;
+padding-top:6px;
+line-height:24px;
+color:#262c39;
+white-space:nowrap;
+text-overflow:ellipsis;
+word-wrap:break-word;
+}
+
+.tile .details > .environments
+{
+position:absolute;
+left:0px;
+right:0px;
+word-wrap:break-word;
+white-space:nowrap;
+}
+
+.tile .details > .environments.truncated
+{
+right:40px;
+}
+
+.tile .details .environment
+{
+font-size:12px;
+color:#296acc;
+white-space:nowrap;
+text-decoration:none;
+}
+
+.tile .details .environment:hover
+{
+text-decoration:underline;
+}
+

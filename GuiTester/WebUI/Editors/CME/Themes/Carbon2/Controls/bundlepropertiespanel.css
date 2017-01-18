@@ -1,0 +1,11 @@
+.BundlePropertiesPanel .gotolocationbutton .image
+{
+background-image:url({ThemePath[Base]}Images/Icons/browse-folders.16x16.png);
+}
+
+.BundlePropertiesPanel .editbutton .image
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-position:0 -0px;
+}
+

@@ -1,0 +1,10 @@
+﻿.contextmenu #cm_usagereport > .image {
+    background-image: url('${ImgUrl}usage-report.png');
+    background-size: 16px;
+}
+
+#UsageReportBtn .image {
+    background-image: url('${ImgUrl}usage-report.png');
+    background-position: -6px 0;
+    width: 33px;
+}

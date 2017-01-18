@@ -1,0 +1,18 @@
+#wfAssignedActivities .image
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.32px.png);
+background-position:0 -224px;
+}
+
+#wfStartedActivities .image
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.32px.png);
+background-position:0 -256px;
+}
+
+#wfFinishedActivities .image
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.32px.png);
+background-position:0 -288px;
+}
+

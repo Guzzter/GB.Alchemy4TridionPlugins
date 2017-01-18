@@ -1,0 +1,52 @@
+.hyperlink.row
+{
+height:36px;
+cursor:pointer;
+position:relative;
+}
+
+.hyperlink.row.selected:not(.disabled),
+.hyperlink.row.selected:hover:not(.disabled)
+{
+background-color:#BED2F0;
+transition-timing-function:ease-out;
+}
+
+.hyperlink.row:hover:not(.disabled)
+{
+background-color:#E9F0FA;
+transition-timing-function:ease-out;
+}
+
+.hyperlink.row > .image-wrapper
+{
+position:absolute;
+width:16px;
+height:16px;
+top:10px;
+left:10px;
+}
+
+.hyperlink.row > .image-wrapper > .image
+{
+width:16px;
+height:16px;
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-position:0 -48px;
+}
+
+.hyperlink.row > .title
+{
+font-size:12px;
+color:#262C39;
+white-space:nowrap;
+text-decoration:none;
+text-shadow:1px 1px #FFF;
+line-height:36px;
+left:36px;
+margin-left:36px;
+margin-right:10px;
+text-overflow:ellipsis;
+overflow:hidden;
+}
+

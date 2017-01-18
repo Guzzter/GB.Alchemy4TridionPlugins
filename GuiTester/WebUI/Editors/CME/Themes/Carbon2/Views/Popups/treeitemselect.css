@@ -1,0 +1,48 @@
+#TreeItemSelectPopup #TopPanel
+{
+	min-height: 20px;
+	height: auto;
+	padding: 10px;
+	vertical-align: middle;
+	background-color: #ebedf0;
+	margin: 0;
+}
+#TreeItemSelectPopup #MiddleTreePanel
+{
+	min-height: 150px;
+	width: 100%;
+	margin: 0;
+	background: #FFFFFF none repeat scroll 0 0;
+	position: relative;
+	border-top: 1px solid #a1a9b2;
+	overflow: auto;
+	overflow-x: hidden;
+}
+#TreeItemSelectPopup #BottomPanel
+{
+	min-height: 75px;
+	width: 100%;
+	height: auto;
+	background-color: #ebedf0;
+	border: 0;
+	border-top: 1px solid #a1a9b2;
+	margin: 0;
+}
+#TreeItemSelectPopup #CmTree
+{
+    left: 5px;
+    top: 5px;
+    overflow: visible;
+}
+#TreeItemSelectPopup #BottomPanel #SelectedItemUri
+{
+	height: auto;
+	margin: 10px 13px 10px 10px;
+}
+#TreeItemSelectPopup #BottomPanel .BtnWrapper
+{
+	width: auto;
+	height: auto;
+	float: right;
+	margin-right: 10px;
+}

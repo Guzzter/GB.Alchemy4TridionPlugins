@@ -1,0 +1,101 @@
+#SchemaDesignTab
+{
+padding:0;
+}
+
+.SchemaDesignTab .PanelContainer
+{
+position:absolute;
+top:10px;
+left:10px;
+right:10px;
+bottom:10px;
+}
+
+.SchemaDesignTab #SchemaDesignFields
+{
+height:250px;
+}
+
+.SchemaDesignTab .panel > .head
+{
+height:14px;
+border-color:#a1a9b2;
+padding-left:10px;
+}
+
+.SchemaDesignTab .panel > .head > .icon
+{
+background-image:url({ThemePath[Base]}Images/Controls/Panel/minimize_group.png);
+}
+
+.SchemaDesignTab .panel.closed > .head > .icon
+{
+background-image:url({ThemePath[Base]}Images/Controls/Panel/expand_group.png);
+}
+
+.SchemaDesignTab .panel.closed #SchemaDesignPanelContentWrapper
+{
+display:none;
+}
+
+.SchemaDesignTab .panel > .body
+{
+border-style:none;
+padding:15px 30px;
+min-height:0;
+}
+
+.SchemaDesignTab #SchemaDesignPanelContentWrapper
+{
+position:relative;
+height:100%;
+}
+
+.SchemaDesignTab #SchemaDesignPanelContentWrapper #SchemaDesignBtnRemoveField
+{
+margin-left:10px;
+}
+
+.SchemaDesignTab #SchemaDesignPanelContentWrapper #SchemaDesignBtnMoveFieldUp
+{
+position:absolute;
+top:0;
+}
+
+.SchemaDesignTab #SchemaDesignPanelContentWrapper #SchemaDesignBtnMoveFieldDown
+{
+position:absolute;
+top:30px;
+}
+
+.SchemaDesignTab #SchemaDesignListButtonWrapper
+{
+position:absolute;
+bottom:0;
+height:25px;
+}
+
+.SchemaDesignTab #SchemaDesignMoveUpDownButtonWrapper
+{
+position:absolute;
+top:0;
+right:0;
+bottom:0;
+width:135px;
+}
+
+.SchemaDesignTab #SchemaDesignFieldsList
+{
+position:absolute;
+top:0;
+right:150px;
+bottom:40px;
+left:0;
+}
+
+.SchemaDesignTab #SchemaDesignFieldDetails
+{
+margin:10px 0 0 0;
+}
+

@@ -1,0 +1,28 @@
+#ComponentPresentationsTab #componentTargetGroupsWindow
+{
+background:#fff;
+height:40%;
+border:none;
+}
+
+#ComponentPresentationsTab .hl table td:first-child
+{
+width:40%;
+}
+
+#ComponentPresentationsTab #componentPreviewWindow
+{
+background:#fff;
+}
+
+#ComponentPresentationsTab #buttonComponentEdit .image
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-position:0 -0px;
+}
+
+#ComponentPresentationsTab #buttonComponentGotoParent .image
+{
+background-image:url({ThemePath[Base]}Images/Icons/browse-folders.16x16.png);
+}
+

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<plugin xmlns:c="https://www.alchemywebstore.com/configuration/definitions" xmlns="http://www.alchemywebstore.com/">
+  <name>Save_Close_Publish_Page</name>
+  <description><![CDATA[When editing a Page directly perform 3 actions in 1 go: save, close and publish. When no target is configured in the plugin settings the publish dialog is presented to the user.]]></description>
+  <version>1.0.0.0</version>
+  <references />
+  <settings>
+    <PublishPrio client="true">Normal</PublishPrio>
+    <PublishTargetNamesCsv client="true">
+    </PublishTargetNamesCsv>
+  </settings>
+  <frameworkVersion>0.8.1.0</frameworkVersion>
+</plugin>

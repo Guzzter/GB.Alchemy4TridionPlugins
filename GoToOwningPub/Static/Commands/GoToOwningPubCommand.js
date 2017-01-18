@@ -10,7 +10,7 @@ Alchemy.command("Go_To_Owning_Publication", "GoToOwningPub", {
 	 * @returns {boolean}
 	 */
     isEnabled: function (selection) {
-        if (selection.getItems().length == 1) {
+        if (selection.getItems().length === 1) {
             var itemType = $models.getItemType(selection.getItem(0));
             if (itemType === $const.ItemType.COMPONENT ||
 			    itemType === $const.ItemType.COMPONENT_TEMPLATE ||

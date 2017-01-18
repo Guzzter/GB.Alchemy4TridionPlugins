@@ -1,0 +1,30 @@
+.settings .actions .main > .button.button2013,
+.settings .actions .main > .button.button2013:focus,
+.settings .actions .main > .button.button2013:hover,
+.settings .actions .main > .button.button2013.mousedown,
+.settings .actions .main > .button.button2013.mouseover,
+.settings .actions .main > .button.button2013.on,
+.settings .actions .main > .button.button2013.toggle,
+.settings .actions .main > .button.button2013.disabled
+{
+	min-width: 0;
+	width: 80px;
+	height: 80px;
+}
+
+.settings .actions .main > .button.button2013 .text,
+.settings .actions .main > .button.button2013:focus .text,
+.settings .actions .main > .button.button2013:hover .text,
+.settings .actions .main > .button.button2013.mousedown .text,
+.settings .actions .main > .button.button2013.mouseover .text,
+.settings .actions .main > .button.button2013.on .text,
+.settings .actions .main > .button.button2013.toggle .text,
+.settings .actions .main > .button.button2013.disabled .text
+{
+	height: 80px;
+	width: 80px;
+	display: table-cell;
+	vertical-align: middle;
+	line-height: 17px;
+	white-space: normal;
+}

@@ -1,0 +1,512 @@
+#DashboardView #LayoutWrapper
+{
+position:absolute;
+top:0;
+right:0;
+bottom:0;
+left:0;
+}
+
+#DashboardView .ribbontoolbar.tabcontrol #leftRuller
+{
+left:40px;
+}
+
+#DashboardView .ribbontoolbar.tabcontrol .switchescontainer
+{
+margin-left:50px;
+}
+
+#DashboardView #TitlebarContainer
+{
+height:24px;
+position:relative;
+}
+
+#DashboardView #DashboardTitlebar
+{
+padding:0;
+}
+
+#DashboardView #DashboardSplitter
+{
+margin:0 0;
+}
+
+#DashboardView .splitter.horizontal .panel1,
+#DashboardView .splitter.horizontal .panel2
+{
+width:auto;
+}
+
+#DashboardView #NavigationPanel
+{
+width:230px;
+overflow:hidden;
+}
+
+#DashboardView .taskbar
+{
+border-width:0;
+}
+
+#DashboardView .panel > .head
+{
+height:10px;
+color:#41464c;
+border-color:#8a9199;
+border-width:0 0 1px 0;
+}
+
+#DashboardView #NavigationPanel .panel > .head
+{
+}
+
+#DashboardView #DashboardContent
+{
+border-width:1px 1px 1px 1px;
+border-style:solid;
+border-color:#8a9199;
+}
+
+#DashboardView #DashboardContent #tax_container #TaxonomyFilter
+{
+height:auto;
+}
+
+#DashboardView #DashboardContent #contentsplitter_container > .handle
+{
+margin:0;
+padding:0;
+border:0 none;
+height:3px;
+border-top:solid 1px #8a9199;
+border-bottom:solid 1px #8a9199;
+}
+
+#DashboardView #DashboardContent #contentsplitter_container.disabled > .handle
+{
+display:none;
+}
+
+#DashboardView #contentsplitter_container
+{
+height:100%;
+display:none;
+}
+
+#FavoritesTree,
+#DashboardTree,
+#AdministrationTree
+{
+padding:0;
+}
+
+#DashboardContent,
+#FavoritesTree,
+#DashboardTree
+{
+background:#fff;
+}
+
+#DashboardTree
+{
+top:0;
+}
+
+#DashboardContent
+{
+overflow:hidden;
+}
+
+#DashboardView #ContentManagementPage_switch .image
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+position:absolute;
+background-position:0 -180px;
+}
+
+#DashboardView #ContentManagementPage_menuswitch span
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-position:0 -180px;
+}
+
+#DashboardView #ContentManagementPage
+{
+background-color:transparent;
+overflow:hidden;
+}
+
+#DashboardView #NavigationPanel .panel .body
+{
+position:relative;
+}
+
+#DashboardView #NavigationSplitter > .handle
+{
+width:100%;
+border-width:1px 0;
+border-color:#8a9199;
+border-style:solid;
+}
+
+#DashboardView #NavigationSplitter
+{
+position:absolute;
+top:26px;
+right:0;
+bottom:0;
+left:0;
+}
+
+#DashboardView #SystemAdministrationPage
+{
+background-color:#fff;
+}
+
+#DashboardView #SystemAdministrationPage_switch .image
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+position:absolute;
+background-position:0 -196px;
+}
+
+#DashboardView #SystemAdministrationPage_menuswitch span
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-position:0 -196px;
+}
+
+#DashboardView #FavoritesPanel
+{
+height:120px;
+}
+
+#DashboardView #FavoritesPanel .body
+{
+/* Workaround for CRQ-609 - layout issue with Japanese text. Seems like  bug in webkit */
+width:calc(100% - 20px);
+}
+
+#DashboardView #FavoritesPanel.closed .head
+{
+border-bottom:none;
+}
+
+#DashboardView #FavoritesPanel,
+#DashboardView #PublicationsPanel,
+#DashboardView #SystemAdministrationPanel
+{
+overflow:hidden;
+color:#212326;
+border-width:0 1px;
+border-color:#8a9199;
+border-style:solid;
+}
+
+#DashboardView #PublicationsPanel,
+#DashboardView #SystemAdministrationPanel
+{
+height:100%;
+}
+
+#DashboardView #list_container,
+#DashboardView #tax_container
+{
+overflow:hidden;
+}
+
+#DashboardView .list .head
+{
+height:16px;
+background:#EDEDED;
+border-width:0 0 1px 0;
+border-style:solid;
+border-color:#8a9199;
+}
+
+#DashboardView .list .head .column
+{
+padding:1px 4px 0 4px;
+}
+
+#DashboardView .list .head .column .text
+{
+color:#41464c;
+}
+
+#DashboardView .panel > .head
+{
+padding:1px 3px 5px;
+}
+
+#DashboardView .splitter .handle,
+#DashboardView .splitter.disabled .handle:hover
+{
+background:transparent;
+}
+
+#DashboardView #FilteredDashboardList
+{
+overflow:hidden;
+height:100%;
+}
+
+#DashboardView .clsitems
+{
+color:#fff;
+border:none 0;
+position:relative;
+margin:0;
+padding:0;
+overflow:hidden;
+}
+
+#DashboardView .clsitems .listbar
+{
+margin:0;
+padding:0;
+background:url(data:image/svg+xml;
+base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y4ZjhmOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZGVkZWQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	filter:none;
+border:none;
+border-bottom:1px solid #8a9199;
+background:linear-gradient(to bottom, #F8F8F8 0%, #EDEDED 100%) repeat scroll 0 0 transparent;
+color:#222E39;
+}
+
+#DashboardView .clsitems .listbar:first-child
+{
+height:24px;
+}
+
+#DashboardView .clsitems .listbar > table
+{
+table-layout:auto;
+height:22px;
+width:100%;
+margin:0;
+padding:0;
+}
+
+#DashboardView .clsitems .listbar .button
+{
+border-radius:0;
+-moz-border-radius:0;
+-webkit-border-radius:0;
+}
+
+#DashboardView .clsitems .listbar .location-td
+{
+width:100%;
+padding:0;
+border-spacing:0;
+margin:0;
+height:22px;
+}
+
+#DashboardView .clsitems .listbar .location-td .location
+{
+width:auto;
+float:left;
+padding-left:5px;
+top:4px;
+position:absolute;
+}
+
+#DashboardView .clsitems .listbar .location-td .location .label
+{
+float:left;
+font-weight:normal;
+}
+
+#DashboardView .clsitems .listbar .location-td .location .button
+{
+float:left;
+min-width:14px;
+min-height:12px;
+margin-top:1px;
+margin-left:5px;
+background-repeat:no-repeat;
+border:none 0;
+background-image:url({ThemePath}/Sprites/cme_Sprites.14px.png);
+background-position:0 -0px;
+}
+
+#DashboardView .clsitems .listbar .location-td .location .button .text
+{
+line-height:0;
+}
+
+#DashboardView .clsitems .listbar .location-td .location .button.mouseover
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.14px.png);
+background-position:0 -12px;
+}
+
+#DashboardView .clsitems .listbar .filter-td
+{
+clear:both;
+width:400px;
+height:22px;
+border-spacing:0;
+}
+
+#DashboardView .clsitems .listbar .filter
+{
+width:400px;
+height:100%;
+padding-top:3px;
+}
+
+#DashboardView .clsitems .listbar .filter .subkey,
+#DashboardView .clsitems .listbar .filter .type
+{
+float:right;
+margin-right:5px;
+position:relative;
+}
+
+#DashboardView .clsitems .listbar .filter .type > div,
+#DashboardView .clsitems .listbar .filter .type > .dropdown,
+#DashboardView .clsitems .listbar .filter .subkey > input,
+#DashboardView .clsitems .listbar .filter .subkey > label
+{
+float:left;
+margin-right:5px;
+}
+
+#DashboardView .clsitems .listbar .filter .subkey > input
+{
+margin:2px 5px 0 0;
+}
+
+#DashboardView .clsitems .listbar .filter .type > div,
+#DashboardView .clsitems .listbar .filter .subkey > label
+{
+margin-top:1px;
+}
+
+#DashboardView .clsitems .listbar .filter .dropdown
+{
+position:relative;
+top:-1px;
+min-height:16px;
+min-width:150px;
+border:solid 1px #626973;
+color:#212326;
+}
+
+#DashboardView .clsitems .info
+{
+height:22px;
+margin:0;
+padding:0;
+background-color:#EBEDF0;
+position:relative;
+border:none 0;
+color:#212326;
+font-size:1em;
+}
+
+#DashboardView .clsitems .info > div
+{
+border-style:solid;
+border-width:0 0 1px 0;
+border-color:#8a9199;
+margin:0;
+padding:5px 0 0 5px;
+height:21px;
+clear:both;
+}
+
+#DashboardView #DashboardToolbar #DashboardPage_switch .leftBG
+{
+background-image:url({ThemePath[CME]}Images/Controls/RibbonToolbar/TridionTab_BG_left.png);
+background-repeat:no-repeat;
+}
+
+#DashboardView #DashboardToolbar #DashboardPage_switch .rightBG
+{
+background-image:url({ThemePath[CME]}Images/Controls/RibbonToolbar/TridionTab_BG_right.png);
+background-repeat:no-repeat;
+}
+
+#DashboardView #DashboardToolbar #DashboardPage_switch .tablabel
+{
+background-image:url({ThemePath[CME]}Images/Controls/RibbonToolbar/TridionTab_BG_center.png);
+}
+
+#DashboardView #DashboardToolbar #DashboardPage_switch.selected .leftBG
+{
+background-image:url({ThemePath[CME]}Images/Controls/RibbonToolbar/TridionTab_Active_BG_left.png);
+}
+
+#DashboardView #DashboardToolbar #DashboardPage_switch.selected .rightBG
+{
+background-image:url({ThemePath[CME]}Images/Controls/RibbonToolbar/TridionTab_Active_BG_right.png);
+}
+
+#DashboardView #DashboardToolbar #DashboardPage_switch.selected .tablabel
+{
+background-image:url({ThemePath[CME]}Images/Controls/RibbonToolbar/TridionTab_Active_BG_center.png);
+}
+
+#DashboardView #PublicationsPanel .head .icon,
+#DashboardView #PublicationsPanel .head #btnFilterSettings
+{
+display:block;
+width:16px;
+height:16px;
+top:0;
+right:0;
+}
+
+#DashboardView #PublicationsPanel .head .icon,
+#DashboardView #PublicationsPanel .head #btnFilterSettings
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-repeat:no-repeat;
+background-position:0 -212px;
+}
+
+#DashboardView #PublicationsPanel .head #btnFilterSettings.active
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-repeat:no-repeat;
+background-position:0 -228px;
+}
+
+#DashboardView #PublicationsPanel .head #btnFilterSettings.hover
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-repeat:no-repeat;
+background-position:0 -244px;
+}
+
+#DashboardView #PublicationsPanel .head #btnFilterSettings.active.hover
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-repeat:no-repeat;
+background-position:0 -260px;
+}
+
+#DashboardView #FilterBar #btnFilterSettings div.arrow
+{
+width:16px;
+height:16px;
+}
+
+#DashboardView #FilterBar #btnFilterSettings div.arrow.left
+{
+background-image:url({ThemePath[CME]}Images/controls/FilterBar/ArrowLeft.png);
+background-repeat:no-repeat;
+}
+
+#DashboardView #FilterBar #btnFilterSettings div.arrow.right
+{
+background-image:url({ThemePath[CME]}Images/controls/FilterBar/ArrowRight.png);
+background-repeat:no-repeat;
+}
+

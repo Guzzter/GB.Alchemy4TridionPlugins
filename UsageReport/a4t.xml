@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<plugin xmlns:c="https://www.alchemywebstore.com/configuration/definitions" xmlns="http://www.alchemywebstore.com/">
+  <id>79d2818ee4de0213d07c970e</id>
+  <name>Usage_Report</name>
+  <description><![CDATA[Adds a new Usage Report option to the ribbon and tool bar, showing the usage count for each item in a folder.]]></description>
+  <version>1.0.0.0</version>
+  <references />
+  <settings>
+    <!--This sets the number of where used links we will traverse to check if an item is used on a page.
+        The number will include fanning out, as in the case of a component that is used on multiple pages.
+        The number must be set to prevent an infinite loop breaking the application if, for example,
+        we had a component a used on component b which was then used on component a.
+
+    <pagesWhereUsedDepth client="true">100</pagesWhereUsedDepth>-->
+  </settings>
+  <versionId>79d2828ee4de0213d07c970d</versionId>
+  <frameworkVersion>0.8.1.0</frameworkVersion>
+</plugin>

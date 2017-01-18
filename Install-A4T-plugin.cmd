@@ -1,0 +1,2 @@
+echo "Installing plugin from %1"
+"c:\Windows\system32\WindowsPowerShell\v1.0\powershell.exe" -ExecutionPolicy ByPass -file Install-A4T-Plugin.ps1  %1 -CmsHostname "http://[hostname]/" -Username [cme username] -Password [password]

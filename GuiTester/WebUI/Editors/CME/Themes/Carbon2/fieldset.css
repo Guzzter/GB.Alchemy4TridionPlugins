@@ -1,0 +1,128 @@
+﻿/*
+Sample HTML structure. To get the fields rendered with the label above the field value, just remove the "horizontal" class.
+
+<div class="fieldset horizontal">
+	<div class="fieldrow">
+		<div class="fieldLabel">label</div>
+		<div class="fieldValue">
+			<div class="readonlyField"></div>
+		</div>
+	</div>
+	<div class="fieldrow">
+		<div class="fieldLabel">label</div>
+		<div class="fieldValue">
+			<input type="text" />
+		</div>
+	</div>
+	<div class="fieldrow">
+		<div class="fieldLabel">label</div>
+		<div class="fieldValue">
+			<textarea>some values</textarea>
+		</div>
+	</div>
+	<div class="fieldrow">
+		<div class="fieldLabel">label</div>
+		<div class="fieldValue">
+			<select>
+				<option>a</option>
+				<option>b</option>
+			</select>
+		</div>
+	</div>
+	<div class="fieldrow">
+		<div class="fieldLabel">label</div>
+		<div class="fieldValue">
+			<label><input type="radio" /> asdklfasldkf</label>
+			<label><input type="radio" /> asdklfasldkf</label>
+			<label><input type="radio" /> asdklfasldkf</label>
+			<label><input type="radio" /> asdklfasldkf</label>
+		</div>
+	</div>
+	<div class="fieldrow">
+		<div class="fieldLabel">label</div>
+		<div class="fieldValue">
+			<label><input type="checkbox" /> asdklfasldkf</label>
+			<label><input type="checkbox" /> asdklfasldkf</label>
+			<label><input type="checkbox" /> asdklfasldkf</label>
+			<label><input type="checkbox" /> asdklfasldkf</label>
+		</div>
+	</div>
+*/
+
+.fieldset
+{
+	line-height: 20px;
+}
+
+.fieldset > .fieldrow
+{
+	margin: 0;
+	padding-top: 10px;
+	clear: both;
+}
+
+.fieldset > .fieldrow:first-child
+{
+	padding-top: 0;
+}
+
+.fieldset.horizontal > .fieldrow > label,
+.fieldset.horizontal > .fieldrow > .fieldLabel
+{
+	float: left;
+	width: 100px;
+}
+
+.fieldset.horizontal > .fieldrow > .fieldValue
+{
+	margin-left: 110px;
+}
+
+.fieldset > .fieldrow > label,
+.fieldset > .fieldrow > .fieldLabel,
+.fieldset > .fieldrow > .fieldValue,
+.fieldset > .fieldrow > .fieldValue label,
+.fieldset > .fieldrow > .fieldValue input[type="checkbox"],
+.fieldset > .fieldrow > .fieldValue input.checkbox,
+.fieldset > .fieldrow > .fieldValue input[type="radio"],
+.fieldset > .fieldrow > .fieldValue input.radio
+{
+	vertical-align: top;
+}
+
+.fieldset > .fieldrow > .fieldValue input[type="text"],
+.fieldset > .fieldrow > .fieldValue input.text,
+.fieldset > .fieldrow > .fieldValue input[type="password"],
+.fieldset > .fieldrow > .fieldValue input.password,
+.fieldset > .fieldrow > .fieldValue select,
+.fieldset > .fieldrow > .fieldValue select option,
+.fieldset > .fieldrow > .fieldValue textarea
+{
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	height: 20px;
+	border: 1px solid #CED7E5;
+	padding: 2px 3px;
+	line-height: 14px;
+}
+
+.fieldset > .fieldrow > .fieldValue .readonlyField
+{
+	padding: 0 4px;
+}
+
+.fieldset > .fieldrow > .fieldValue select
+{
+	padding: 0;
+}
+
+.fieldset > .fieldrow > .fieldValue textarea
+{
+	height: 62px;
+}
+
+.fieldset > .fieldrow > .fieldValue select > option
+{
+	border-style: none;
+}

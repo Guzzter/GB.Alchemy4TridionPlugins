@@ -1,0 +1,13 @@
+#PageView #GeneralTab #FileName
+{
+	width:	300px;
+}
+#PageView #GeneralTab #FileExtension
+{
+	width: 40px;
+}
+#PageView #MasterTabControl .form.fieldgroup
+{
+	background: Transparent none repeat scroll 0 0;
+	border: 2px solid #CCCCCC;
+}

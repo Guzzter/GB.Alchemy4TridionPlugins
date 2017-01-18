@@ -1,0 +1,26 @@
+.target-types-button .ellipsisIconDark
+{
+margin-top:4px;
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-position:0 -64px;
+}
+
+.target-types-button .ellipsisIconLight
+{
+margin-top:4px;
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-position:0 -80px;
+}
+
+.item .sdl-callout
+{
+min-height:0;
+}
+
+.item .sdl-callout .sdl-tridion-listview
+{
+max-width:250px;
+padding-top:6px;
+padding-bottom:6px;
+}
+

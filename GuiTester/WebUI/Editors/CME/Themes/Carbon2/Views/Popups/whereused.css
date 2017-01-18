@@ -1,0 +1,28 @@
+#WhereUsedPopup body
+{
+	background: #ebedf0;
+}
+#WhereUsedPopup #ItemTitle
+{
+	background-color: #fff;
+	border-color: #b8c1cc;
+}
+#WhereUsedPopup .tabcontrol .body
+{
+	background-color: #fafafa;
+}
+#WhereUsedPopup .tabcontrol
+{
+	padding: 0;
+}
+#WhereUsedPopup #ItemDetails
+{
+	background-color: #fff;
+}
+#WhereUsedPopup #ItemDetails,
+#WhereUsedPopup #UsedInListWrapper,
+#WhereUsedPopup #UsesListWrapper, 
+#WhereUsedPopup #PublishedToListWrapper 
+{
+	border: solid 1px #b8c1cc;
+}

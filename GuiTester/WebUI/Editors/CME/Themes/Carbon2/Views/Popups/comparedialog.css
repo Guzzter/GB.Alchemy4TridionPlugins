@@ -1,0 +1,12 @@
+.comparedialog
+{
+	background: #bfd4e3;
+}	
+.comparedialog fieldset
+{
+	border: solid 1px #00458c;
+}
+.comparedialog #BottomPanel
+{
+	border-top-color: #dfdfdf;
+}

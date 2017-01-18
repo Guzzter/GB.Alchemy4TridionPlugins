@@ -1,0 +1,16 @@
+.userinfobar .group.activities .icon
+{
+width:16px;
+height:18px;
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-repeat:no-repeat;
+margin:0 5px 0 10px;
+background-position:0 -96px;
+}
+
+.userinfobar .group.activities .icon.hover
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.16px.png);
+background-position:0 -114px;
+}
+

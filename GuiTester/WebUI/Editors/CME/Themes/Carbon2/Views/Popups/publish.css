@@ -1,0 +1,59 @@
+#PublishPopup #OptionsTabControl
+{
+height:100%;
+padding:0;
+}
+
+#PublishPopup #OptionsTabControl_pages
+{
+border:solid 1px #a1a9b2;
+}
+
+#PublishPopup .panel3
+{
+background-color:#fff;
+border-top:solid 1px #a1a9b2;
+}
+
+#PublishPopup .panel1 .ttList
+{
+background-color:#fff;
+}
+
+#PublishPopup #TargetTypeList
+{
+border:solid 1px #a1a9b2;
+}
+
+#PublishPopup #BtnItemsToPublish
+{
+position:relative;
+min-width:150px;
+}
+
+#PublishPopup #BtnItemsToPublish.button2013.imageButton .image
+{
+top:6px;
+left:8px;
+width:11px;
+height:8px;
+}
+
+#PublishPopup #BtnItemsToPublish.expand .image
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.11px.png);
+background-position:0 -0px;
+}
+
+#PublishPopup #BtnItemsToPublish.collapse .image
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.11px.png);
+background-position:0 -8px;
+}
+
+#PublishPopup #BtnItemsToPublishRefresh
+{
+margin-left:5px;
+position:relative;
+}
+

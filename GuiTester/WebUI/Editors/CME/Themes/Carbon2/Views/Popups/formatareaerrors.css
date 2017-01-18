@@ -1,0 +1,54 @@
+#FaErrorsPopup body
+{
+    background-color: #ebedf0;
+}
+#FaErrorsPopup .layout
+{
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+#FaErrorsPopup .layout > .section
+{
+	margin-top: 10px;
+}
+#FaErrorsPopup #ListWrapper
+{
+	border-top: solid 1px #a1a9b2;
+}
+#FaErrorsPopup .layout > .section > table
+{
+	width: 100%;
+	height: auto;
+	margin: 0;
+	padding: 0;
+}
+#FaErrorsPopup .layout > .section > #ErrorListLabel
+{
+	margin-bottom: 10px;
+}
+#FaErrorsPopup .layout > .section > #ErrorList
+{
+
+}
+#FaErrorsPopup #Header
+{
+	padding: 0 10px;
+}
+#FaErrorsPopup #Footer
+{
+	position: relative;
+	margin: 0;
+}
+#FaErrorsPopup #Footer #BtnOk
+{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+#FaErrorsPopup #CorrectLabel,
+#FaErrorsPopup #ManualLabel,
+#FaErrorsPopup #AutoLabel span
+{
+	font-weight: bold;
+}

@@ -1,0 +1,78 @@
+.publishtransaction #ItemInfo
+{
+padding-top:5px;
+}
+
+.publishtransaction #ItemInfo .Icon
+{
+position:absolute;
+top:20px;
+left:20px;
+width:48px;
+height:48px;
+}
+
+.publishtransaction #ItemInfo.info .Icon
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.48px.png);
+background-position:0 -96px;
+}
+
+.publishtransaction #ItemInfo.error .Icon
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.48px.png);
+background-position:0 -0px;
+}
+
+.publishtransaction #ItemInfo.warning .Icon
+{
+background-image:url({ThemePath}/Sprites/cme_Sprites.48px.png);
+background-position:0 -144px;
+}
+
+.publishtransaction
+{
+background-color:#fafafa;
+background-image:none;
+}
+
+.popupview .publishtransactionerror .Center
+{
+left:0;
+padding-left:55px;
+background-position:12px 15px;
+background-repeat:no-repeat;
+background-image:url({ThemePath[CME]}Images/Icons/mc.error.32x32.png);
+}
+
+.popupview .publishtransactionerror .Title
+{
+color:#2972CC;
+font-size:16px;
+padding:18px 12px 0 0;
+}
+
+.popupview .publishtransactionerror .Description
+{
+color:#41464C;
+padding:20px 12px 0 0;
+white-space:pre-line;
+}
+
+#PublishTransactionPopup .BtnWrapper
+{
+width:100px;
+margin-top:10px;
+margin-left:auto;
+margin-right:10px;
+}
+
+#TransportSummary .failure .detailsicon
+{
+background-image:url({ThemePath[CME]}Images/Views/show-details.png);
+background-repeat:no-repeat;
+background-position:2px 6px;
+width:16px;
+height:16px;
+}
+
