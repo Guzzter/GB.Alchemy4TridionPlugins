@@ -3,26 +3,23 @@ My personal collection of Tridion/Web8 plugins stored in [Alchemy Webstore](http
 
 [![Build status](https://ci.appveyor.com/api/projects/status/tkqs6mfsfljkmlr9?svg=true)](https://ci.appveyor.com/project/GuusBeltman/gb-alchemy4tridionplugins)
 
-## Go To Owning Publication
+## Go To Owning Publication (Compatible with Tridion 2013 and Web 8.)
 Adds a context menu command to open a TCM item in it's owning publication. Saves moving up and down the Blueprint structure.
 
-Compatible with Tridion 2013 and Web 8.
 
+
+[More details on my blog page](http://blog.guusbeltman.nl/post/2015/07/31/Tridion-Gui-Extension-Go-To-Owning-Publication)
 [Owning Publication plugin Location within Alchemy Webstore](http://alchemywebstore.com/plugins/55d32cf5e4de020da4123e64)
+[Source code of the Alchemy-less version can be found here on my Github](https://github.com/Guzzter/GoToOwningPublication)
 
-[Alchemy-less version can be found here](https://github.com/Guzzter/GoToOwningPublication)
 
-## Export User List
+## Export User List (Compatible with Tridion 2013 and Web 8.)
 Adds a new Export User List option to the ribbon and tool bar, allowing to download the userlist as CSV.
 
-Compatible with Tridion 2013 and Web 8.
+[Export User List plugin on ALchemy Webstore](http://www.alchemywebstore.com/plugins/Export-User-List)
 
-## Save Close and Publish
+## Save Close and Publish (Compatible with Tridion 2013 and Web 8.)
 When editing a Page directly perform 3 actions in 1 go: save, close and publish. 
-
 When no target is configured in the plugin settings the publish dialog is presented to the user. Optionally one or more publish target(s) can be configured per environment to skip the publish dialog.
 
-This is plugin is built by <a href="http://www.tahzoo.com" target="_blank"> Tahzoo</a> and sponsored by <a href="http://www.essent.nl" target="_blank">Essent</a>. 
-<a href="http://www.essent.nl" target="_blank">Essent</a> is an energy supplier that supplies electricity, gas and other energy products in the Netherlands.
-
-Compatible with Tridion 2013 and Web 8.
+[Save Close and Publish on ALchemy Webstore](http://www.alchemywebstore.com/plugins/Save-Close-Publish-Page)
