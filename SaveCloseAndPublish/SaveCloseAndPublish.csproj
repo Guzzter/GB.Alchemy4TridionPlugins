@@ -82,7 +82,7 @@
     <Compile Include="AlchemyPlugin.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="a4t.xml">
+    <Content Include="Static\Scripts\a4t.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Static\icon.png" />
