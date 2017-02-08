@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<plugin xmlns:c="https://www.alchemywebstore.com/configuration/definitions" xmlns="http://www.alchemywebstore.com/">
+  <name>Nav_Panel_Resizer</name>
+  <description><![CDATA[Automatically resize the Tridion navigation panel for wide screens. Width is configurable via the Plugin settings]]></description>
+  <version>1.0.0.0</version>
+  <references />
+  <settings>
+    <InitialSize client="true">400px</InitialSize>
+  </settings>
+  <frameworkVersion>0.8.3.0</frameworkVersion>
+</plugin>
