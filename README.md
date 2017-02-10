@@ -15,10 +15,15 @@ Adds a context menu command to open a TCM item in it's owning publication. Saves
 ## Export User List (Compatible with Tridion 2013 and Web 8.)
 Adds a new Export User List option to the ribbon and tool bar, allowing to download the userlist as CSV.
 
-[Export User List plugin on ALchemy Webstore](http://www.alchemywebstore.com/plugins/Export-User-List)
+[Export User List plugin on Alchemy Webstore](http://www.alchemywebstore.com/plugins/Export-User-List)
 
 ## Save Close and Publish (Compatible with Tridion 2013 and Web 8.)
 When editing a Page directly perform 3 actions in 1 go: save, close and publish. 
 When no target is configured in the plugin settings the publish dialog is presented to the user. Optionally one or more publish target(s) can be configured per environment to skip the publish dialog.
 
-[Save Close and Publish on ALchemy Webstore](http://www.alchemywebstore.com/plugins/Save-Close-Publish-Page)
+[Save Close and Publish on Alchemy Webstore](http://www.alchemywebstore.com/plugins/Save-Close-Publish-Page)
+
+## Nav Panel Resizer
+Automatically resize the Tridion navigation panel for wide screens. Width is configurable via the Plugin settings.
+
+[Nav Panel Resizer on Alchemy Webstore(http://www.alchemywebstore.com/)
