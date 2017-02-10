@@ -26,4 +26,4 @@ When no target is configured in the plugin settings the publish dialog is presen
 ## Nav Panel Resizer (Compatible with Tridion 2013 and Web 8.)
 Automatically resize the Tridion navigation panel for wide screens. Width is configurable via the Plugin settings.
 
-[Nav Panel Resizer on Alchemy Webstore(http://www.alchemywebstore.com/)
+[Nav Panel Resizer on Alchemy Webstore](http://www.alchemywebstore.com/)
